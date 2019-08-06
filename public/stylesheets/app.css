@@ -4,6 +4,9 @@ body{
     margin: 0;
     padding: 0;
 }
+#logo{
+    height: 55px;
+}
 nav{
     font-size: 1.1rem;
     background-color: rgb(57, 84, 112);
@@ -85,7 +88,7 @@ nav{
 }
 #content h1{
     font-family: 'Merriweather', serif;
-    font-size: 4.2rem;
+    font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 1.3rem;
     text-shadow: 10px 10px 20px rgba(0,0,0, 0.6);
@@ -94,6 +97,8 @@ nav{
     font-size: 1.5rem;
     font-weight: 400;
     text-shadow: 10px 10px 20px rgba(0,0,0,0.6);
+    margin-bottom: 40px;
+    text-decoration: underline;
 }
 
 @media(max-width: 566px){
@@ -146,13 +151,22 @@ nav{
 }
 
 #know_more .pic1{
-    background: url("/images/info-section-pics/wheat.jpg") no-repeat center center/cover;
+    background: url("/images/info-section-pics/rice.jpg") no-repeat center center/cover;
 }
 #know_more .pic2{
-    background: url("/images/info-section-pics/rice.jpg") no-repeat center center/cover;
+    background: url("/images/info-section-pics/sugar.jpg") no-repeat center center/cover;
 }
 #know_more .pic3{
     background: url("/images/info-section-pics/jaggery.jpg") no-repeat center center/cover;
+}
+#know_more .pic4{
+    background: url("/images/info-section-pics/pulses.jpg") no-repeat center center/cover;
+}
+#know_more .pic5{
+    background: url("/images/info-section-pics/channa.jpg") no-repeat center center/cover;
+}
+#know_more .pic6{
+    background: url("/images/info-section-pics/newItems.jpg") no-repeat center center/cover;
 }
 
 #know_more .info{
@@ -179,15 +193,12 @@ nav{
 }
 
 #know_more .head-info h1{
-    font-size: 3.3rem;
+    font-size: 4.0rem;
     margin: auto;
     padding: 3rem 0;
     text-align: center;
     color: rgb(113, 78, 126);
     text-shadow: 5px 5px 15px rgba(0,0,0, 0.2);
-}
-#know_more .head-info h1:hover{
-    font-size: 3.4rem;
 }
 
 @media(min-width: 992px) and (max-width: 1200px){
