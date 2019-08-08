@@ -56,10 +56,10 @@ nav{
         margin-top: 0.5rem;
         margin-right: 0;
     }
-    #know_more .p2{
+    #know_more .p2, #know_more .p4, #know_more .p6{
         order: 1;
     }
-    #know_more .i2{
+    #know_more .i2, #know_more .i4, #know_more .i6{
         order: 2;
     }
 }
@@ -173,7 +173,7 @@ nav{
     text-align: center;
     width: 70%;
     margin: 35px auto;
-    padding: 40px 50px;
+    padding: 30px 40px;
     background-color: rgba(0,0,0,0.1);
     box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
 }
@@ -182,12 +182,7 @@ nav{
     padding-bottom: 1.2rem;
     color: steelblue;
 }
-#know_more .info p{
-    font-weight: 500;
-    padding-bottom: 0.5rem;
-    color: #13202c;
-    line-height: 1.4;
-}
+
 #know_more .info .btn{
     font-weight: 700;
 }
@@ -200,6 +195,30 @@ nav{
     color: rgb(113, 78, 126);
     text-shadow: 5px 5px 15px rgba(0,0,0, 0.2);
 }
+
+#know_more .info .product_list{
+    list-style: none;
+}
+#know_more .info .product_list li{
+    background-color: rgba(0,0,0,0.1);
+    margin: 5px;
+    padding: 10px 20px;
+    font-weight: 500;
+    text-align: left;
+}
+#know_more .info .product_list li span{
+    float: right;
+}
+#know_more .info .product_list li a{
+    text-decoration: none;
+    color: #454649;
+    font-size: 1.2rem;
+}
+#know_more .info .product_list li:hover a{
+    color: #13202c;
+}
+
+
 
 @media(min-width: 992px) and (max-width: 1200px){
     #know_more .row .c{
@@ -269,5 +288,42 @@ footer p{
     margin: 0 !important;
     text-align: center;
     color: white;
+}
+
+footer .social {
+    padding: 5px;
+    text-align: center;
+}
+  
+footer .social-icon {
+    text-align: center;
+    width: 43px;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+    background-color: black;
+    font-size: 1.2rem;
+    margin: 5px;
+}
+footer .social .fa-facebook-f {
+    background-color: #3b5999;
+}
+footer .social .fa-twitter {
+    background-color: #1da1f3;
+}
+footer .social .fa-instagram {
+    background-color: #3e749a;
+}
+footer .social .fa-envelope {
+    background-color: #dd4f40;
+}
+footer .social .fa-youtube {
+    background-color: #fe0000;
+}
+footer .social .fa-pinterest {
+    background-color: #e60024;
+}
+footer .social .fa-linkedin-in {
+    background-color: #0077b4;
 }
 
