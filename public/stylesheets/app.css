@@ -1,24 +1,38 @@
+/* common styling */
+
+html{
+    min-height: 100%;
+    position: relative;
+}
+
 body{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
+
+/* styling navbar */
+
 #logo{
     height: 55px;
 }
+
 nav{
     font-size: 1.1rem;
     background-color: rgb(57, 84, 112);
     font-weight: 700;
     opacity: 0.9;
 }
+
 .navbar-brand{
     color: #fff !important;
     font-size: 1.8rem !important;
     margin: none;
     padding: 0 !important;
 }
+
 .fa-bars{
     color: #fff;
     font-size: 1.8rem;
@@ -35,18 +49,24 @@ nav{
     width: 7rem;
     text-align: center;
 }
+
 .n-link:hover, .active{
     font-size: 1.2rem;
     color: #fff;
     text-decoration: none;
     background-color: rgb(69, 102, 133);
 }
+
 .n-link:active{
     background-color: rgb(104, 136, 165);
 }
+
 .n-list{
     margin-right: 3rem;
 }
+
+/* responsive styling */
+
 @media (max-width: 992px){
     .n-link{
         width: 100%;
@@ -63,14 +83,19 @@ nav{
         order: 2;
     }
 }
+
+/* styling the slideshow */
+
 .img{
     height: 100vh;
     width: 100vw;
 }
+
 #carouselExampleFade{
     height: 100vh;
     background-color: rgba(0,0,0,0.3);
 }
+
 .carousel-inner{
     height: 100%;
     position: absolute !important;
@@ -79,6 +104,9 @@ nav{
     right: 0;
     z-index: -1;
 }
+
+/* styling slideshow content */
+
 #content{
     color: #fff;;
     max-width: 550px;
@@ -86,6 +114,7 @@ nav{
     margin: 0 auto;
     padding-top: 15%;
 }
+
 #content h1{
     font-family: 'Merriweather', serif;
     font-size: 3.5rem;
@@ -93,6 +122,7 @@ nav{
     margin-bottom: 1.3rem;
     text-shadow: 10px 10px 20px rgba(0,0,0, 0.6);
 }
+
 #content p{
     font-size: 1.5rem;
     font-weight: 400;
@@ -100,6 +130,8 @@ nav{
     margin-bottom: 40px;
     text-decoration: underline;
 }
+
+/* responsive styling */
 
 @media(max-width: 566px){
     #content{
@@ -114,6 +146,7 @@ nav{
         font-size: 1rem;
     }
 }
+
 @media(min-width: 566px) and (max-width: 830px){
     #content{
         max-width: 400px;
@@ -127,15 +160,19 @@ nav{
         font-size: 1rem;
     }
 }
+
+/* styling product info section */
+
 #know_more{
     background: #CC95C0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
+
 #know_more .row{
     margin: 0 !important;
 }
+
 #know_more .row .c{
     height: 450px;
     margin: 0 !important;
@@ -153,18 +190,23 @@ nav{
 #know_more .pic1{
     background: url("/images/info-section-pics/rice.jpg") no-repeat center center/cover;
 }
+
 #know_more .pic2{
     background: url("/images/info-section-pics/sugar.jpg") no-repeat center center/cover;
 }
+
 #know_more .pic3{
     background: url("/images/info-section-pics/jaggery.jpg") no-repeat center center/cover;
 }
+
 #know_more .pic4{
     background: url("/images/info-section-pics/pulses.jpg") no-repeat center center/cover;
 }
+
 #know_more .pic5{
     background: url("/images/info-section-pics/channa.jpg") no-repeat center center/cover;
 }
+
 #know_more .pic6{
     background: url("/images/info-section-pics/newItems.jpg") no-repeat center center/cover;
 }
@@ -199,6 +241,7 @@ nav{
 #know_more .info .product_list{
     list-style: none;
 }
+
 #know_more .info .product_list li{
     background-color: rgba(0,0,0,0.1);
     margin: 5px;
@@ -206,25 +249,29 @@ nav{
     font-weight: 500;
     text-align: left;
 }
+
 #know_more .info .product_list li span{
     float: right;
 }
+
 #know_more .info .product_list li a{
     text-decoration: none;
     color: #454649;
     font-size: 1.2rem;
 }
+
 #know_more .info .product_list li:hover a{
     color: #13202c;
 }
 
-
+/* responsive styling */
 
 @media(min-width: 992px) and (max-width: 1200px){
     #know_more .row .c{
         height: 550px;
     }
 }
+
 @media(max-width: 576px){
     #know_more .row .c{
         height: 580px;
@@ -238,51 +285,69 @@ nav{
         margin: auto;
     }
 }
+
+/* styling feature section */
+
 #feature .row{
     margin: 0 !important;
 }
+
 #feature .c{
     height: 300px;
     padding: 0 !important;
     margin: 0 !important;
 }
+
 #feature .f{
     height: 100%;
     padding: 0 !important;
     margin: 0 !important;
 }
+
 #feature .feature-info{
     text-align: center;
     width: 60%;
     margin: auto;
     padding-top: 3rem;
 }
+
 #feature .feature-info h3{
     font-weight: 700;
     padding-bottom: 0.7rem;
 }
+
 #feature .feature-info p{
     font-weight: 500;
     line-height: 1.4;
 }
+
 #feature i{
     font-size: 3rem;
     padding-bottom: 1rem;
 }
+
 #feature .feature1{
     background-color: rgb(216, 209, 200);
 }
+
 #feature .feature2{
-    background-color: rgb(133, 113, 60);
+    background-color: rgb(189, 172, 129);
 }
+
 #feature .feature3{
     background-color: rgb(216, 209, 200);
 }
 
+/* styling footer section */
+
 footer{
     background-color: rgba(0, 0, 0, 0.705);
     margin: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
+
 footer p{
     padding: 1rem 0 !important;
     margin: 0 !important;
@@ -305,25 +370,36 @@ footer .social-icon {
     font-size: 1.2rem;
     margin: 5px;
 }
+
 footer .social .fa-facebook-f {
     background-color: #3b5999;
 }
+
 footer .social .fa-twitter {
     background-color: #1da1f3;
 }
+
 footer .social .fa-instagram {
     background-color: #3e749a;
 }
+
 footer .social .fa-envelope {
     background-color: #dd4f40;
 }
+
 footer .social .fa-youtube {
     background-color: #fe0000;
 }
+
 footer .social .fa-pinterest {
     background-color: #e60024;
 }
+
 footer .social .fa-linkedin-in {
     background-color: #0077b4;
+}
+
+.footer_space{
+    height: 58px;
 }
 
