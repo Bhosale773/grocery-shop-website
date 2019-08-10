@@ -109,26 +109,27 @@ nav{
 
 #content{
     color: #fff;;
-    max-width: 550px;
+    max-width: 650px;
     text-align: center;
     margin: 0 auto;
-    padding-top: 15%;
+    padding-top: 11%;
 }
 
 #content h1{
     font-family: 'Merriweather', serif;
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 6rem;
+    font-weight: 500;
     margin-bottom: 1.3rem;
-    text-shadow: 10px 10px 20px rgba(0,0,0, 0.6);
+    text-shadow: 3px 3px rgba(0,0,0, 0.5);
 }
 
 #content p{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    text-shadow: 10px 10px 20px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px rgba(0,0,0,0.6);
     margin-bottom: 40px;
     text-decoration: underline;
+    color: rgb(237, 238, 230);
 }
 
 /* responsive styling */
@@ -230,11 +231,11 @@ nav{
 }
 
 #know_more .head-info h1{
-    font-size: 4.0rem;
+    font-size: 5rem;
     margin: auto;
     padding: 3rem 0;
     text-align: center;
-    color: rgb(113, 78, 126);
+    color: rgb(153, 96, 161);
     text-shadow: 5px 5px 15px rgba(0,0,0, 0.2);
 }
 
@@ -403,3 +404,57 @@ footer .social .fa-linkedin-in {
     height: 58px;
 }
 
+
+/* styling the rice products page */
+
+.rice{
+    padding-top: 6rem;
+    background-color: #f4f4f4;
+}
+
+.rice .product_title{
+    font-size: 2.7rem;
+    margin-bottom: 1.8rem;
+    color: #3c4f79;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+    padding: 10px 0;
+}
+
+.rice .card{
+    margin-bottom: 1.5rem !important;
+}
+
+.card-img{
+    width: 80% !important;
+    height: 80% !important;
+    margin: 10% 10% !important;
+}
+
+.card-body{
+    margin-left: 15px;
+}
+
+h2.card-title{
+    margin-bottom: 30px;
+}
+
+.card-text{
+    margin: 15px auto 15px 20px !important;
+    font-size: 1.3rem;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+
+.card-text .property{
+    display: inline-block;
+    width: 300px;
+    color: #797e81;
+}
+
+.rice .card-body a.btn{
+    margin-left: 25%;
+    margin-top: 20px;
+    width: 160px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
