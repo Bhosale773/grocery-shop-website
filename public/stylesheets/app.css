@@ -44,7 +44,6 @@ nav{
     color: #ece2e2;
     padding: 10px 4px;
     margin: auto 2px;
-    border-radius: 7px;
     transition: font-size, background-color 0.1s ease-in-out;
     width: 7rem;
     text-align: center;
@@ -55,6 +54,7 @@ nav{
     color: #fff;
     text-decoration: none;
     background-color: rgb(69, 102, 133);
+    border-radius: 7px;
 }
 
 .n-link:active{
@@ -165,9 +165,7 @@ nav{
 /* styling product info section */
 
 #know_more{
-    background: #CC95C0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #d3e2df69;
 }
 
 #know_more .row{
@@ -231,12 +229,15 @@ nav{
 }
 
 #know_more .head-info h1{
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin: auto;
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
-    color: rgb(153, 96, 161);
-    text-shadow: 5px 5px 15px rgba(0,0,0, 0.2);
+    color: #237dac;
+    text-shadow: 3px 3px 5px rgba(0,0,0, 0.2);
+    width: 90%;
+    border-bottom: 2px solid rgba(0,0,0, 0.1);
+    margin-bottom: 2rem;
 }
 
 #know_more .info .product_list{
@@ -407,12 +408,13 @@ footer .social .fa-linkedin-in {
 
 /* styling the rice products page */
 
-.rice{
+.product{
     padding-top: 6rem;
-    background-color: #f4f4f4;
+    padding-bottom: 1rem; 
+    background-color: rgba(207, 200, 200, 0.1);
 }
 
-.rice .product_title{
+.product .product_title{
     font-size: 2.7rem;
     margin-bottom: 1.8rem;
     color: #3c4f79;
@@ -420,8 +422,9 @@ footer .social .fa-linkedin-in {
     padding: 10px 0;
 }
 
-.rice .card{
+.product .card{
     margin-bottom: 1.5rem !important;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 .card-img{
@@ -451,7 +454,7 @@ h2.card-title{
     color: #797e81;
 }
 
-.rice .card-body a.btn{
+.product .card-body a.btn{
     margin-left: 25%;
     margin-top: 20px;
     width: 160px;

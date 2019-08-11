@@ -34,3 +34,12 @@ function scrollToID(id, speed) {
     var targetOffset = obj.top - offSet;
     $('html,body').animate({ scrollTop: targetOffset }, speed);
 }
+
+$("nav .n-list .n-item a").on('click', function () {
+	$("nav .n-list").find('li.active').removeClass("active");
+	$(this).parent('li').addClass("active");
+});
+
+if(window.location.pathname !== "/"){
+    $("nav .n-list .home").removeClass("active");
+}
