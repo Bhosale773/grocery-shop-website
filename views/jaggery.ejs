@@ -17,7 +17,48 @@
                             <p class="card-text"><span class="property">Is It Organic</span><span class="value"><%= product.organic %></span></p>
                             <p class="card-text"><span class="property">Packaging Type</span><span class="value"><%= product.pType %></span></p>       
                             <p class="card-text"><span class="property">Price Range</span><span class="value"><%= product.price %></span></p>   
-                            <a class="btn btn-secondary" href="#">Order Now</a>    
+                            <button onclick="document.getElementById('<%= product.idn %>').style.display='block'" class="btn btn-secondary">Order Now</button>
+
+                            <div id="<%= product.idn %>" class="mod">
+                                <div class="animate mod-content">
+                                    <span onclick="document.getElementById('<%= product.idn %>').style.display='none'" class="cl">&times;</span>
+                                    <h2>Contact Us For <%= product.title %></h3>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="<%= product.image %>" alt="Image">
+                                        </div>
+                                        <div class="col-8">
+                                            <form>
+                                                <p>
+                                                    <label for="qty">Select Required Quantity:</label>
+                                                    <input type="number" name="quantity" id="qty" placeholder="10" required>
+                                                    <select name="unit" id="qty">
+                                                        <option value="Units">Units</option>
+                                                        <option value="Kilogram">Kilogram</option>
+                                                        <option value="Quintal">Quintal</option>
+                                                        <option value="Ton">Ton</option>
+                                                        <option value="Bags">Bags</option>
+                                                        <option value="Packets">Packets</option>
+                                                    </select>
+                                                </p>
+                                                <p>
+                                                    <label for="typeOfDelivery">Select Type Of Delivery:</label>
+                                                    <input type="radio" name="typeOfDelivery" value="home" id="typeOfDelivery" required>Home Delivery
+                                                    <input type="radio" name="typeOfDelivery" value="shop" id="typeOfDelivery" checked required>Shop Visit
+                                                </p>
+                                                <button class="submit btn btn-sm btn-outline-success" type="submit">Submit</button>                                                
+                                            </form>
+                                            <div class="customer-info">
+                                                <h4>Your Contact Info :</h4>
+                                                <p>Name : Pratik Bhosale</p>
+                                                <p>Contact No : 9987554120</p>
+                                                <p>Email Id : pratikbhosale773@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
                         </div>
                     </div>
                 </div>

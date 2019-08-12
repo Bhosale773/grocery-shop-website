@@ -2,7 +2,7 @@ $('.carousel').carousel({
     pause: "false"
 });
 
-$("#carouselExampleFade #content a, .btn").on("click", function(event){
+$("#carouselExampleFade #content a").on("click", function(event){
     if(this.hash !== ""){
         event.preventDefault();
         const hash = this.hash;
@@ -13,6 +13,7 @@ $("#carouselExampleFade #content a, .btn").on("click", function(event){
         );
     }
 });
+
 $(document).ready(function(){
     var speed = 200;
 
@@ -43,3 +44,18 @@ $("nav .n-list .n-item a").on('click', function () {
 if(window.location.pathname !== "/"){
     $("nav .n-list .home").removeClass("active");
 }
+
+// Get the modal
+var modal = document.querySelectorAll('.mod');
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+    for(var i=0; i<modal.length; i++){
+        if (event.target == modal[i]) {
+            modal[i].style.display = "none";
+        }
+    }
+}
+
+

@@ -431,6 +431,7 @@ footer .social .fa-linkedin-in {
     width: 80% !important;
     height: 80% !important;
     margin: 10% 10% !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .card-body{
@@ -454,10 +455,141 @@ h2.card-title{
     color: #797e81;
 }
 
-.product .card-body a.btn{
+.product .card-body .btn{
     margin-left: 25%;
     margin-top: 20px;
     width: 160px;
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+/* styling popup window */
+
+
+/* The Modal (background) */
+.mod {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.mod1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.mod-content {
+background-color: #e5ebeafd;
+width: 60vw;
+height: 65vh;
+margin: 15vh 20vw; /* 5% from the top, 15% from the bottom and centered */
+border: 1px solid #888;
+font-size: 1rem;
+font-weight: 500;
+}
+
+.mod .mod-content h2{
+    color: rgb(94, 9, 9);
+    font-weight: 600;
+    margin: auto;
+    max-width: 90%;
+    text-align: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+
+.mod .mod-content img{
+    width: 90%;
+    height: 80%;
+    margin: 10% 5%;
+    margin-top: 15%;
+    margin-left: 15%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mod .mod-content form{
+    padding: 15px 15px;
+    margin-left: 20px;
+    width: 90%;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+
+.mod .mod-content form label{
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: steelblue;
+}
+
+.mod .mod-content form input, .mod .mod-content form select{
+    font-size: 1 rem !important;
+    font-weight: 500;
+    height: 2rem;
+    margin: 5px 10px;
+}
+
+.mod .mod-content form input#typeOfDelivery{
+    height: 1rem;
+    width: 1rem !important;
+}
+
+.mod .mod-content .customer-info{
+    padding: 15px;
+    line-height: 0.8;
+    margin-left: 15px;
+}
+
+.mod .mod-content .customer-info h4{
+    font-weight: 500;
+    color: steelblue;
+    margin-bottom: 20px;
+}
+  
+/* The Close Button (x) */
+.mod .mod-content .cl{
+    float: right;
+    color: #000;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-top: -0.6rem;
+    margin-right: 0.9rem;
+}
+  
+.mod .mod-content .cl:hover{
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
 }
