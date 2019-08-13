@@ -1,7 +1,7 @@
 {
   "name": "grocery-shop-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Grocerry Shop Website",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

@@ -1,20 +1,24 @@
 <% include ./partials/header %>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>...</h1>
-<h1>Sign Up Form</h1>
+<div id="form">
+    <div class="border">
+        <h3>Sign Up</h3>
+        <form action="/signup" method="POST">
+            <i class="fas fa-pencil-alt"></i>
+            <input type="text" name="fname" placeholder="First Name" required>
+            <i class="fas fa-pencil-alt"></i>
+            <input type="text" name="lname" placeholder="Last Name" required>
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required>
+            <i class="fas fa-mobile-alt"></i>
+            <input type="text" name="contact" placeholder="Contact No" required>
+            <i class="fas fa-user-circle"></i>
+            <input type="text" name="username" placeholder="Create Username" required>
+            <i class="fas fa-unlock-alt"></i>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <button class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</div>
 
-<form action="/signup" method="POST">
-    <input type="text" name="fname" placeholder="first name" required>
-    <input type="text" name="lname" placeholder="Last name" required>
-    <input type="email" name="email" placeholder="email" required>
-    <input type="text" name="contact" placeholder="contact no" required>
-    <input type="text" name="username" placeholder="username" required>
-    <input type="password" name="password" placeholder="password" required>
-    <button>Submit</button>
-</form>
 
 <% include ./partials/footer %>
