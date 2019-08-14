@@ -45,7 +45,7 @@ nav{
     padding: 10px 4px;
     margin: auto 2px;
     transition: font-size, background-color 0.1s ease-in-out;
-    width: 7rem;
+    width: 8.4rem;
     text-align: center;
 }
 
@@ -62,7 +62,7 @@ nav{
 }
 
 .n-list{
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 
 nav ul li img{
@@ -87,7 +87,7 @@ nav ul li .avatar:hover{
 #logoutbtn{
     background-color: rgba(31, 63, 88, 0.8);
     position: fixed;
-    right: 58px;
+    right: 22px;
     top: 10px;  
     width: 140px;
     font-size: 1.3rem;
@@ -106,6 +106,15 @@ nav ul li .avatar:hover{
     font-size: 1.4rem;
     color: rgb(27, 233, 223) !important;
     background-color: rgba(43, 77, 105, 0.9);
+}
+
+/* styling alerts */
+
+.alert{
+    top: 100px;
+    width: 100%;
+    z-index: 2;
+    font-weight: 500;
 }
 
 /* responsive styling */
@@ -637,7 +646,7 @@ font-weight: 500;
 
 #form{
     max-width: 500px;
-    margin: 20vh auto;
+    margin: 20vh auto 0 auto;
 }
 
 #form .border{

@@ -28,7 +28,7 @@
                                             <img src="<%= product.image %>" alt="Image">
                                         </div>
                                         <div class="col-8">
-                                            <form>
+                                            <form action="/products/new" method="POST">
                                                 <p>
                                                     <label for="qty">Select Required Quantity:</label>
                                                     <input type="number" name="quantity" id="qty" placeholder="10" required>

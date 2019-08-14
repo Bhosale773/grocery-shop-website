@@ -39,6 +39,11 @@ function scrollToID(id, speed) {
 if(window.location.pathname == "/"){
     $("nav .n-list").find('li.active').removeClass("active");
     $("nav .n-list .home").addClass("active");
+    $(".alert").css({
+        position: "absolute",
+        width: "65vw",
+        opacity: "0.8"
+    });
 }
 else if(window.location.pathname == "/login"){
     $("nav .n-list").find('li.active').removeClass("active");
@@ -73,5 +78,6 @@ window.onclick = function(event) {
 $(".avatar").on("click",function(){
     $("#logoutbtn").slideToggle(100);
 });
+
 
 
