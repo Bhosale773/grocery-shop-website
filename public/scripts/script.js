@@ -70,4 +70,8 @@ window.onclick = function(event) {
     }
 }
 
+$(".avatar").on("click",function(){
+    $("#logoutbtn").slideToggle(100);
+});
+
 

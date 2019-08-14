@@ -65,6 +65,49 @@ nav{
     margin-right: 3rem;
 }
 
+nav ul li img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+nav ul li .avatar{
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 6px 0px 0px 15px; 
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 !important;
+}
+
+nav ul li .avatar:hover{
+    background-color: rgb(69, 102, 133);
+    border-radius: 7px;
+}
+
+#logoutbtn{
+    background-color: rgba(31, 63, 88, 0.8);
+    position: fixed;
+    right: 58px;
+    top: 10px;  
+    width: 140px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff !important;
+    padding-top: 70px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+    text-align: center;
+    z-index: 2;
+    text-decoration: none;
+}
+
+#logoutbtn:hover{
+    font-size: 1.4rem;
+    color: rgb(27, 233, 223) !important;
+    background-color: rgba(43, 77, 105, 0.9);
+}
+
 /* responsive styling */
 
 @media (max-width: 992px){
@@ -619,7 +662,7 @@ font-weight: 500;
 
 #form form input{
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
     display: block;
     width: 100%;
     margin: 10px 10px;

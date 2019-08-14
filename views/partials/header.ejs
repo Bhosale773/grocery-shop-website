@@ -38,9 +38,16 @@
               </li> 
             <% }else{ %>
               <li class="n-item">
-                <a class="n-link" href="/logout">Log Out</a>
+                <div class="avatar">
+                    <img src="../images/Avatar/male_avatar.png" alt="Icon"> 
+                    <%=currentUser.fname%>
+                </div>
               </li> 
             <% } %>         
           </ul>
         </div>
     </nav>
+    <% if(currentUser){ %>
+      <a style="display: none" id="logoutbtn" href="/logout">Log Out</a>
+    <% } %>
+    
