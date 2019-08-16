@@ -1,8 +1,8 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
 <section class="product">
     <div class="container">
-        <h2 class="product_title">DESI CHANNA</h2>
-        <% channaProducts.forEach(function(product){ %>
+        <h2 class="product_title">NEW ITEMS</h2>
+        <% newProducts.forEach(function(product){ %>
             <div id="<%= product.id %>" class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
@@ -12,10 +12,10 @@
                         <div class="card-body">
                             <h2 class="card-title"><%= product.title %></h2>
                             <p class="card-text"><span class="property">Packaging Size</span><span class="value"><%= product.pSize %></span></p> 
+                            <p class="card-text"><span class="property">Brand Available</span><span class="value"><%= product.brand %></span></p>
                             <p class="card-text"><span class="property">Variety</span><span class="value"><%= product.variety %></span></p>
-                            <p class="card-text"><span class="property">Shelf Life</span><span class="value"><%= product.shelfLife %></span></p>
-                            <p class="card-text"><span class="property">Is It Organic</span><span class="value"><%= product.organic %></span></p>
-                            <p class="card-text"><span class="property">Packaging Type</span><span class="value"><%= product.pType %></span></p>       
+                            <p class="card-text"><span class="property">Color</span><span class="value"><%= product.color %></span></p>
+                            <p class="card-text"><span class="property">Type</span><span class="value"><%= product.type %></span></p>
                             <p class="card-text"><span class="property">Price Range</span><span class="value"><%= product.price %></span></p>   
                             <button onclick="document.getElementById('<%= product.idn %>').style.display='block'" class="btn btn-secondary">Order Now</button>
 
@@ -28,8 +28,9 @@
                                             <img src="<%= product.image %>" alt="Image">
                                         </div>
                                         <div class="col-8">
-                                            <form action="/products/channa" method="POST">
+                                            <form action="/products/new" method="POST">
                                                 <p>
+                                                    <input class="d-none" type="text" name="title" value="<%= product.title %>">
                                                     <label for="qty">Select Required Quantity:</label>
                                                     <input type="number" name="quantity" id="qty" placeholder="10" required>
                                                     <select name="unit" id="qty">
@@ -58,7 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-  
+   
                         </div>
                     </div>
                 </div>
@@ -70,4 +71,4 @@
 <section class="footer_space"></section>
 
 
-<% include ./partials/footer %>
+<% include ../partials/footer %>

@@ -75,9 +75,47 @@ window.onclick = function(event) {
     }
 }
 
-$(".avatar").on("click",function(){
-    $("#logoutbtn").slideToggle(100);
+$("#star-rating i.one").on("mouseover",function(){
+    $("#star-rating input").val(1);
+    $(this).addClass("check");
+    $("#star-rating i.two").removeClass("check");
+    $("#star-rating i.three").removeClass("check");
+    $("#star-rating i.four").removeClass("check");
+    $("#star-rating i.five").removeClass("check");
 });
+$("#star-rating i.two").on("mouseover",function(){
+    $("#star-rating input").val(2);
+    $(this).addClass("check");
+    $("#star-rating i.one").addClass("check");
+    $("#star-rating i.three").removeClass("check");
+    $("#star-rating i.four").removeClass("check");
+    $("#star-rating i.five").removeClass("check");
+});
+$("#star-rating i.three").on("mouseover",function(){
+    $("#star-rating input").val(3);
+    $(this).addClass("check");
+    $("#star-rating i.one").addClass("check");
+    $("#star-rating i.two").addClass("check");
+    $("#star-rating i.four").removeClass("check");
+    $("#star-rating i.five").removeClass("check");
+});
+$("#star-rating i.four").on("mouseover",function(){
+    $("#star-rating input").val(4);
+    $(this).addClass("check");
+    $("#star-rating i.one").addClass("check");
+    $("#star-rating i.two").addClass("check");
+    $("#star-rating i.three").addClass("check");
+    $("#star-rating i.five").removeClass("check");
+});
+$("#star-rating i.five").on("mouseover",function(){
+    $("#star-rating input").val(5);
+    $(this).addClass("check");
+    $("#star-rating i.one").addClass("check");
+    $("#star-rating i.two").addClass("check");
+    $("#star-rating i.three").addClass("check");
+    $("#star-rating i.four").addClass("check");
+});
+
 
 
 

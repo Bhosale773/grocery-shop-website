@@ -8,12 +8,57 @@ var channaProducts        = require("./productsData/channaProducts");
 var newProducts           = require("./productsData/newProducts");
 var mongoose              = require("mongoose");
 var bodyParser            = require("body-parser");
-var User                  = require("./models/user");
 var passport              = require("passport");
 var LocalStrategy         = require("passport-local");
+var passportLocalMongoose = require("passport-local-mongoose");
 var flash                 = require("connect-flash");
     
 mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
+
+var historySchema = new mongoose.Schema({
+    product: String,
+    quantity: String,
+    typeOfDelivery: String
+ });
+
+var History = mongoose.model("History", historySchema);
+
+var commentSchema = mongoose.Schema({
+    text: String,
+    starValue: Number,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    }
+});
+
+var Comment = mongoose.model("Comment", commentSchema);
+
+var UserSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    fname: String,
+    lname: String,
+    contact: String,
+    email: String,
+    history: [
+        historySchema
+    ],
+    comments: [
+        commentSchema
+    ]
+});
+
+UserSchema.plugin(passportLocalMongoose);
+
+var User = mongoose.model("User", UserSchema);
+
+
+
+
 
 app.set("view engine", "ejs");
 
@@ -43,35 +88,67 @@ app.use(function(req, res, next){
     next();
 });
 
+
+
+
 app.get("/",function(req, res){
-    res.render("landing");
+    Comment.find({},function(err,comments){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("landing", {comments:comments});
+        }
+    });
 });
 
 app.get("/products/rice",isLoggedIn, function(req, res){
-    res.render("rice",{riceProducts:riceProducts});
+    res.render("products/rice",{riceProducts:riceProducts});
 });
 
 app.get("/products/sugar",isLoggedIn, function(req, res){
-    res.render("sugar",{sugarProducts:sugarProducts});
+    res.render("products/sugar",{sugarProducts:sugarProducts});
 });
 
 app.get("/products/jaggery",isLoggedIn, function(req, res){
-    res.render("jaggery",{jaggeryProducts:jaggeryProducts});
+    res.render("products/jaggery",{jaggeryProducts:jaggeryProducts});
 });
 
 app.get("/products/pulses",isLoggedIn, function(req, res){
-    res.render("pulses",{pulsesProducts:pulsesProducts});
+    res.render("products/pulses",{pulsesProducts:pulsesProducts});
 });
 
 app.get("/products/channa",isLoggedIn, function(req, res){
-    res.render("channa",{channaProducts:channaProducts});
+    res.render("products/channa",{channaProducts:channaProducts});
 });
 
 app.get("/products/new",isLoggedIn, function(req, res){
-    res.render("new",{newProducts:newProducts});
+    res.render("products/new",{newProducts:newProducts});
 });
 
 app.post("/products/:product", function(req, res){
+    History.create({
+        product: req.body.title,
+        quantity: req.body.quantity + " " + req.body.unit,
+        typeOfDelivery: req.body.typeOfDelivery
+    },function(err, history){
+        if(err){
+            console.log(err);
+        }
+        User.findOne({username: req.user.username},function(err, user){
+            if(err){
+                console.log(err);
+            }else{
+                user.history.push(history);
+                user.save(function(err, data){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log(data);
+                    }
+                });
+            }
+        });
+    })
     req.flash("success", "Thank You for choosing Us. We will contact you shortly.");
     res.redirect("/products/"+req.params.product);
 })
@@ -126,8 +203,35 @@ function isLoggedIn(req, res, next){
 }
 
 
+app.get("/comments/new", isLoggedIn, function(req, res){
+    res.render("comments/new");
+});
 
-
+app.post("/comments", isLoggedIn, function(req, res){
+    Comment.create(req.body, function(err, comment){
+        if(err){
+            console.log(err);
+        }else{
+            comment.author.id = req.user._id;
+            comment.author.username = req.user.username;
+            comment.save(function(err, comment){
+                if(err){
+                    console.log(err);
+                }else{
+                    User.findOne({username: req.user.username},function(err, user){
+                        if(err){
+                            console.log(err);
+                        }else{
+                            user.comments.push(comment);
+                            user.save();
+                            res.redirect("/#comments");
+                        }
+                    });
+                }
+            });
+        }
+    });
+});
 
 
 

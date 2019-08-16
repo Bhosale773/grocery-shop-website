@@ -134,6 +134,37 @@
     </div>
 </section>
 
+
+<section id="comments">
+    <div class="comment-container">
+        <% comments.forEach(function(comment){ %>
+            <div class="content">
+                <div class="row">
+                    <div class="col-1">
+                        <img src="../images/Avatar/male_avatar.png" alt="Icon">
+                    </div>
+                    <div class="col-10">
+                        <h5><%=comment.text%></h5>
+                        <% for(var i=0; i< comment.starValue;i++){ %>
+                            <span class="fa fa-star check"></span>
+                        <% } %>
+                        <% for(var i=0; i< 5-comment.starValue;i++){ %>
+                            <span class="fa fa-star"></span>
+                        <% } %>
+                    </div>
+                    <div class="col-1">
+                        <blockquote>
+                            - <%=comment.author.username%>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        <% }); %>  
+        <a href="/comments/new">Add</a>
+    </div>
+</section>
+
+
 <section id="feature">
     <div class="row">
         <div class="c col-md-4">

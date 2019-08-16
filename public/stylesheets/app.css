@@ -84,7 +84,9 @@ nav ul li .avatar:hover{
     border-radius: 7px;
 }
 
-#logoutbtn{
+
+
+/* #logoutbtn{
     background-color: rgba(31, 63, 88, 0.8);
     position: fixed;
     right: 22px;
@@ -106,7 +108,7 @@ nav ul li .avatar:hover{
     font-size: 1.4rem;
     color: rgb(27, 233, 223) !important;
     background-color: rgba(43, 77, 105, 0.9);
-}
+} */
 
 /* styling alerts */
 
@@ -340,6 +342,47 @@ nav ul li .avatar:hover{
     }
 }
 
+/* styling comment section */
+
+#comments img{
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+#comments .content{
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+#comments .content h5{
+    color: rgb(83, 42, 12);
+    margin-top: 10px;
+    font-size: 1.5rem !important;
+}
+
+#comments .content blockquote{
+    color: rgb(16, 6, 51);
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#comments .comment-container{
+    margin: 10px 70px;
+}
+
+#star-rating{
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.check{
+    color: orange;
+}
+
 /* styling feature section */
 
 #feature .row{
@@ -381,15 +424,15 @@ nav ul li .avatar:hover{
 }
 
 #feature .feature1{
-    background-color: rgb(216, 209, 200);
+    background-color: rgba(216, 209, 200, 0.8);
 }
 
 #feature .feature2{
-    background-color: rgb(189, 172, 129);
+    background-color: rgba(189, 172, 129, 0.8);
 }
 
 #feature .feature3{
-    background-color: rgb(216, 209, 200);
+    background-color: rgba(216, 209, 200, 0.8);
 }
 
 /* styling footer section */
@@ -529,29 +572,55 @@ h2.card-title{
     padding-top: 60px;
 }
 
-.mod1 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
 
 /* Modal Content/Box */
 .mod-content {
 background-color: #e5ebeafd;
 width: 60vw;
 height: 65vh;
-margin: 15vh 20vw; /* 5% from the top, 15% from the bottom and centered */
+margin: 15vh 20vw;
 border: 1px solid #888;
 font-size: 1rem;
 font-weight: 500;
+}
+
+
+.mod-content-logout {
+background-color: #e5ebeafd;
+max-width: 600px;
+margin: 15vh 32% 0 32%; /* 5% from the top, 15% from the bottom and centered */
+border: 1px solid #888;
+}
+
+.mod-content-logout img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.mod-content-logout .content{
+    padding: 15px;
+}
+
+.mod-content-logout .content .name{
+    margin-top: 10px;
+}
+
+.mod-content-logout #historybtn{
+    margin: 20px 5% 10px 5%;
+    width: 90%;
+    font-weight: 500;
+}
+.mod-content-logout #logoutbtn{
+    margin: 10px 5%;
+    width: 90%;
+    font-weight: 500;
+}
+
+.mod-content-logout #history_list li{
+    margin: 5px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(94, 62, 14);
 }
 
 .mod .mod-content h2{
@@ -612,7 +681,7 @@ font-weight: 500;
 }
   
 /* The Close Button (x) */
-.mod .mod-content .cl{
+.mod .mod-content .cl, .mod .mod-content-logout .cl{
     float: right;
     color: #000;
     font-size: 2.4rem;
@@ -621,7 +690,7 @@ font-weight: 500;
     margin-right: 0.9rem;
 }
   
-.mod .mod-content .cl:hover{
+.mod .mod-content .cl:hover, .mod .mod-content-logout .cl:hover{
     color: red;
     cursor: pointer;
 }
