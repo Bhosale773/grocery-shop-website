@@ -195,14 +195,6 @@ app.post("/signup", function(req, res){
     });
 });
 
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    req.flash("error", "You must be Sign In first.");
-    res.redirect("/login");
-}
-
 
 app.get("/comments/new", isLoggedIn, function(req, res){
     res.render("comments/new");
@@ -235,7 +227,7 @@ app.post("/comments", isLoggedIn, function(req, res){
     });
 });
 
-app.get("/comments/:id/edit",function(req, res){
+app.get("/edit-comments/:id", isCommentOwner, function(req, res){
     Comment.findById(req.params.id, function(err, comment){
         if(err){
             console.log(err);
@@ -245,7 +237,7 @@ app.get("/comments/:id/edit",function(req, res){
     });
 });
 
-app.put("/comments/:id", function(req, res){
+app.put("/comments/:id", isCommentOwner, function(req, res){
     Comment.findByIdAndUpdate(req.params.id, req.body, function(err, comment){
         if(err){
             console.log(err);
@@ -256,7 +248,7 @@ app.put("/comments/:id", function(req, res){
     });
 });
 
-app.delete("/comments/:id", function(req, res){
+app.delete("/comments/:id", isCommentOwner, function(req, res){
     Comment.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log(err);
@@ -269,12 +261,39 @@ app.delete("/comments/:id", function(req, res){
 });
 
 
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    req.flash("error", "You must be Sign In first.");
+    res.redirect("/login");
+}
+
+function isCommentOwner(req, res, next) {
+    if(req.isAuthenticated()){
+        Comment.findById(req.params.id, function(err, foundComment){
+            if(err){
+                res.redirect("back");
+            }else{
+                if(foundComment.author.id.equals(req.user._id)) {
+                    next();
+                } else {
+                    req.flash("error", "You don't have permission to do that");
+                    res.redirect("back");
+                }
+            }
+        });
+    } else {
+        req.flash("error", "You must be Sign In first.");
+        res.redirect("/login");
+    }
+}
 
 
 
 app.get("*",function(req, res){
     res.send("Page not found");
-})
+});
 
 app.listen(process.env.PORT || 1000, function(){
     console.log("Server started");

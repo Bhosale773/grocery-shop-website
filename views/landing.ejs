@@ -4,7 +4,7 @@
     <div id="content">
         <h1>SADGURU RICE TRADERS</h1>
         <cite>
-            <p><em>Rice Wholesaler in NAVI MUMBAI <br>at 10:30 AM tomorrow</em></p>
+            <p><em>Rice Wholesalers in NAVI MUMBAI <br><span class="timeline"></span></em></p>
         </cite>
         <a class="btn btn-primary btn-lg" href="#know_more">Know More</a>
     </div>
@@ -151,16 +151,18 @@
                             </div>
                             <div class="col-7">
                                 <h5><%=comment.text%></h5>
-                                    <% for(var i=0; i< comment.starValue; i++){ %>
-                                        <i class="fa fa-star check"></i>
-                                    <% } %>
-                                    <% for(var i=0; i< 5-comment.starValue; i++){ %>
-                                        <i class="fa fa-star"></i>
-                                    <% } %>
-                                    <a class="update btn btn-sm btn-outline-success" href="/comments/<%= comment._id %>/edit">Update</a>
+                                <% for(var i=0; i< comment.starValue; i++){ %>
+                                    <i class="fa fa-star check"></i>
+                                <% } %>
+                                <% for(var i=0; i< 5-comment.starValue; i++){ %>
+                                    <i class="fa fa-star"></i>
+                                <% } %>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                    <a class="update btn btn-sm btn-outline-success" href="/edit-comments/<%= comment._id %>">Update</a>
                                     <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
                                         <button class="delete btn btn-sm btn-outline-danger">Delete</button>
                                     </form>
+                                <% } %>
                             </div>
                             <div class="col-3">
                                 <blockquote>
