@@ -12,8 +12,11 @@ var passport              = require("passport");
 var LocalStrategy         = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 var flash                 = require("connect-flash");
+var methodOverride        = require("method-override");
     
 mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
+mongoose.set('useFindAndModify', false);
+
 
 var historySchema = new mongoose.Schema({
     product: String,
@@ -56,13 +59,11 @@ UserSchema.plugin(passportLocalMongoose);
 
 var User = mongoose.model("User", UserSchema);
 
-
-
-
-
 app.set("view engine", "ejs");
 
 app.use(flash());
+
+app.use(methodOverride("_method"));
 
 app.use(express.static(__dirname + "/public"));
 
@@ -224,7 +225,8 @@ app.post("/comments", isLoggedIn, function(req, res){
                         }else{
                             user.comments.push(comment);
                             user.save();
-                            res.redirect("/#comments");
+                            req.flash("success", "Review added successfully.")
+                            res.redirect("/");
                         }
                     });
                 }
@@ -233,6 +235,38 @@ app.post("/comments", isLoggedIn, function(req, res){
     });
 });
 
+app.get("/comments/:id/edit",function(req, res){
+    Comment.findById(req.params.id, function(err, comment){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("comments/edit", {comment: comment});
+        }
+    });
+});
+
+app.put("/comments/:id", function(req, res){
+    Comment.findByIdAndUpdate(req.params.id, req.body, function(err, comment){
+        if(err){
+            console.log(err);
+        }else{
+            req.flash("success", "Review updated successfully.");
+            res.redirect("/");
+        }
+    });
+});
+
+app.delete("/comments/:id", function(req, res){
+    Comment.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            console.log(err);
+        }
+        else{
+            req.flash("success", "Review deleted successfully");
+            res.redirect("/");
+        }
+    });
+});
 
 
 

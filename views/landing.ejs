@@ -37,7 +37,7 @@
 
 <section id="know_more">
     <div class="head-info">
-        <h1>OUR PRODUCTS</h1>
+        <h2>OUR PRODUCTS</h2>
     </div>
     <div class="row">
         <div class="c col-lg-6">
@@ -137,30 +137,41 @@
 
 <section id="comments">
     <div class="comment-container">
-        <% comments.forEach(function(comment){ %>
-            <div class="content">
-                <div class="row">
-                    <div class="col-1">
-                        <img src="../images/Avatar/male_avatar.png" alt="Icon">
-                    </div>
-                    <div class="col-10">
-                        <h5><%=comment.text%></h5>
-                        <% for(var i=0; i< comment.starValue;i++){ %>
-                            <span class="fa fa-star check"></span>
-                        <% } %>
-                        <% for(var i=0; i< 5-comment.starValue;i++){ %>
-                            <span class="fa fa-star"></span>
-                        <% } %>
-                    </div>
-                    <div class="col-1">
-                        <blockquote>
-                            - <%=comment.author.username%>
-                        </blockquote>
+        <div class="head-info">
+            <h2>Reviews</h2>
+        </div>
+        <a class="add btn btn-lg btn-light" href="/comments/new">Add Review</a>
+        <div class="row">
+            <% comments.forEach(function(comment){ %>
+                <div class="col-4">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="../images/Avatar/male_avatar.png" alt="Icon">
+                            </div>
+                            <div class="col-7">
+                                <h5><%=comment.text%></h5>
+                                    <% for(var i=0; i< comment.starValue; i++){ %>
+                                        <i class="fa fa-star check"></i>
+                                    <% } %>
+                                    <% for(var i=0; i< 5-comment.starValue; i++){ %>
+                                        <i class="fa fa-star"></i>
+                                    <% } %>
+                                    <a class="update btn btn-sm btn-outline-success" href="/comments/<%= comment._id %>/edit">Update</a>
+                                    <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                        <button class="delete btn btn-sm btn-outline-danger">Delete</button>
+                                    </form>
+                            </div>
+                            <div class="col-3">
+                                <blockquote>
+                                    - <%=comment.author.username%>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <% }); %>  
-        <a href="/comments/new">Add</a>
+            <% }); %>  
+        </div>
     </div>
 </section>
 
@@ -172,7 +183,7 @@
                 <div class="feature-info">
                     <i class="fas fa-rupee-sign"></i>
                     <h3>Afordable Price</h3>
-                    <p><em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit laudantium ipsa eaque consectetur ad quae.</em></p>
+                    <p><em>We sale our products at affordable price. Price varies from product to product.</em></p>
                 </div>
             </div>
         </div>
@@ -181,7 +192,7 @@
                 <div class="feature-info">
                     <i class="far fa-hand-peace"></i>
                     <h3>Quality Products</h3>
-                    <p><em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit laudantium ipsa eaque consectetur ad quae.</em></p>
+                    <p><em>With right price we provides best quality products to our customers.</em></p>
                 </div>
             </div>
         </div>
@@ -190,7 +201,7 @@
                 <div class="feature-info">
                     <i class="fas fa-home"></i>
                     <h3>Home Delivery</h3>
-                    <p><em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit laudantium ipsa eaque consectetur ad quae.</em></p>
+                    <p><em>We also have facility of home delivery with cash on delivery scheme.</em></p>
                 </div>
             </div>
         </div>
