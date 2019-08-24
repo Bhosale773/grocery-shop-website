@@ -17,11 +17,12 @@ var methodOverride        = require("method-override");
 mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
 mongoose.set('useFindAndModify', false);
 
-
 var historySchema = new mongoose.Schema({
     product: String,
     quantity: String,
-    typeOfDelivery: String
+    typeOfDelivery: String,
+    want_to_know_currentPrice: String,
+    date: {type: Date, default: Date.now()}
  });
 
 var History = mongoose.model("History", historySchema);
@@ -47,6 +48,8 @@ var UserSchema = new mongoose.Schema({
     lname: String,
     contact: String,
     email: String,
+    addressl1: String,
+    addressl2: String,
     history: [
         historySchema
     ],
@@ -95,7 +98,8 @@ app.use(function(req, res, next){
 app.get("/",function(req, res){
     Comment.find({},function(err,comments){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }else{
             res.render("landing", {comments:comments});
         }
@@ -130,21 +134,23 @@ app.post("/products/:product", function(req, res){
     History.create({
         product: req.body.title,
         quantity: req.body.quantity + " " + req.body.unit,
-        typeOfDelivery: req.body.typeOfDelivery
+        typeOfDelivery: req.body.typeOfDelivery,
+        want_to_know_currentPrice: req.body.currentPrice
     },function(err, history){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }
         User.findOne({username: req.user.username},function(err, user){
             if(err){
-                console.log(err);
+                req.flash("error", "Something Went Wrong, Try Again.")
+                res.redirect("back");
             }else{
                 user.history.push(history);
                 user.save(function(err, data){
                     if(err){
-                        console.log(err);
-                    }else{
-                        console.log(data);
+                        req.flash("error", "Something Went Wrong, Try Again.")
+                        res.redirect("back");
                     }
                 });
             }
@@ -153,12 +159,6 @@ app.post("/products/:product", function(req, res){
     req.flash("success", "Thank You for choosing Us. We will contact you shortly.");
     res.redirect("/products/"+req.params.product);
 })
-
-
-
-
-
-
 
 app.get("/login", function(req, res){
     res.render("login");
@@ -183,7 +183,7 @@ app.get("/signup", function(req, res){
 });
 
 app.post("/signup", function(req, res){
-    User.register(new User({username: req.body.username, fname: req.body.fname, lname: req.body.lname, email: req.body.email, contact: req.body.contact}), req.body.password, function(err, user){
+    User.register(new User({username: req.body.username, fname: req.body.fname, lname: req.body.lname, email: req.body.email, contact: req.body.contact, addressl1: req.body.addressl1, addressl2: req.body.addressl2}), req.body.password, function(err, user){
         if(err){
             req.flash("error", err.message);
             res.redirect("/signup");
@@ -195,7 +195,6 @@ app.post("/signup", function(req, res){
     });
 });
 
-
 app.get("/comments/new", isLoggedIn, function(req, res){
     res.render("comments/new");
 });
@@ -203,17 +202,20 @@ app.get("/comments/new", isLoggedIn, function(req, res){
 app.post("/comments", isLoggedIn, function(req, res){
     Comment.create(req.body, function(err, comment){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }else{
             comment.author.id = req.user._id;
             comment.author.username = req.user.username;
             comment.save(function(err, comment){
                 if(err){
-                    console.log(err);
+                    req.flash("error", "Something Went Wrong, Try Again.")
+                    res.redirect("back");
                 }else{
                     User.findOne({username: req.user.username},function(err, user){
                         if(err){
-                            console.log(err);
+                            req.flash("error", "Something Went Wrong, Try Again.")
+                            res.redirect("back");
                         }else{
                             user.comments.push(comment);
                             user.save();
@@ -230,7 +232,8 @@ app.post("/comments", isLoggedIn, function(req, res){
 app.get("/edit-comments/:id", isCommentOwner, function(req, res){
     Comment.findById(req.params.id, function(err, comment){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }else{
             res.render("comments/edit", {comment: comment});
         }
@@ -240,7 +243,8 @@ app.get("/edit-comments/:id", isCommentOwner, function(req, res){
 app.put("/comments/:id", isCommentOwner, function(req, res){
     Comment.findByIdAndUpdate(req.params.id, req.body, function(err, comment){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }else{
             req.flash("success", "Review updated successfully.");
             res.redirect("/");
@@ -251,7 +255,8 @@ app.put("/comments/:id", isCommentOwner, function(req, res){
 app.delete("/comments/:id", isCommentOwner, function(req, res){
     Comment.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            console.log(err);
+            req.flash("error", "Something Went Wrong, Try Again.")
+            res.redirect("back");
         }
         else{
             req.flash("success", "Review deleted successfully");
@@ -273,6 +278,7 @@ function isCommentOwner(req, res, next) {
     if(req.isAuthenticated()){
         Comment.findById(req.params.id, function(err, foundComment){
             if(err){
+                req.flash("error", "Something Went Wrong, Try Again.")
                 res.redirect("back");
             }else{
                 if(foundComment.author.id.equals(req.user._id)) {
@@ -292,7 +298,7 @@ function isCommentOwner(req, res, next) {
 
 
 app.get("*",function(req, res){
-    res.send("Page not found");
+    res.render("error");
 });
 
 app.listen(process.env.PORT || 1000, function(){

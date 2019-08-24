@@ -17,7 +17,7 @@
                             <p class="card-text"><span class="property">Color</span><span class="value"><%= product.color %></span></p>
                             <p class="card-text"><span class="property">Type</span><span class="value"><%= product.type %></span></p>
                             <p class="card-text"><span class="property">Price Range</span><span class="value"><%= product.price %></span></p>   
-                            <button onclick="document.getElementById('<%= product.idn %>').style.display='block'" class="btn btn-secondary">Order Now</button>
+                            <button onclick="document.getElementById('<%= product.idn %>').style.display='block'" class="btn btn-secondary">Interested ?</button>
 
                             <div id="<%= product.idn %>" class="mod">
                                 <div class="animate mod-content">
@@ -43,9 +43,14 @@
                                                     </select>
                                                 </p>
                                                 <p>
-                                                    <label for="typeOfDelivery">Select Type Of Delivery:</label>
+                                                    <label for="typeOfDelivery">Select Your Preference:</label>
                                                     <input type="radio" name="typeOfDelivery" value="home" id="typeOfDelivery" required>Home Delivery
                                                     <input type="radio" name="typeOfDelivery" value="shop" id="typeOfDelivery" checked required>Shop Visit
+                                                </p>
+                                                <p>
+                                                    <label for="currentPrice">Want To Know Current Price:</label>
+                                                    <input type="radio" name="currentPrice" value="yes" id="currentPrice" checked required>Yes
+                                                    <input type="radio" name="currentPrice" value="no" id="currentPrice" required>No
                                                 </p>
                                                 <button class="submit btn btn-sm btn-outline-success" type="submit">Submit</button>                                                
                                             </form>

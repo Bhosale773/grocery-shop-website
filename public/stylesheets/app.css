@@ -390,6 +390,10 @@ nav ul li .avatar:hover{
     margin: 15px auto;
 }
 
+.fa-star{
+    color: rgb(161, 153, 153);
+}
+
 .check{
     color: orange;
 }
@@ -630,8 +634,7 @@ h2.card-title{
 .mod-content {
 background-color: #e5ebeafd;
 width: 60vw;
-height: 65vh;
-margin: 15vh 20vw;
+margin: 12vh 20vw;
 border: 1px solid #888;
 font-size: 1rem;
 font-weight: 500;
@@ -716,9 +719,13 @@ border: 1px solid #888;
     margin: 5px 10px;
 }
 
-.mod .mod-content form input#typeOfDelivery{
+.mod .mod-content form input#typeOfDelivery, .mod .mod-content form input#currentPrice{
     height: 1rem;
     width: 1rem !important;
+}
+
+.mod .mod-content .submit{
+    margin-top: 5px !important;
 }
 
 .mod .mod-content .customer-info{
@@ -771,6 +778,10 @@ border: 1px solid #888;
     margin: 20vh auto 0 auto;
 }
 
+.formS{
+    margin: 15vh auto 0 auto !important;
+}
+
 .form .border{
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px 5px;
@@ -803,14 +814,24 @@ border: 1px solid #888;
     border: none;
     border: 1px solid rgb(151, 154, 156);
     border-radius: 5px;
-
 }
+
 .form form>i{
     color: gray;
     font-size: 1.7rem;
     position: absolute;
     padding: 10px 25px; 
     min-width: 40px; 
+}
+
+.eyeicon{
+    margin-left: 385px !important;
+    font-size: 1.3rem !important;
+    padding: 12px 25px !important; 
+}
+
+.eyeicon:active{
+    color: steelblue;
 }
 
 
@@ -834,4 +855,11 @@ border: 1px solid #888;
     color: gray;
     font-size: 1.2rem;
     font-weight: 500;
+}
+
+
+
+#error{
+    width: 100%;
+    height: 100%;
 }

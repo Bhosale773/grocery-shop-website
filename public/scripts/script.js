@@ -183,5 +183,29 @@ if($("#star-rating input").val()==="1"){
     $("#star-rating i.five").addClass("check");
 }
 
+$(document).ready(function() {
+    $("#passinput").on("keyup", function(){
+        if($("#passinput").val()){
+            $(".eyeicon").removeClass("d-none");
+        }else{
+            $(".eyeicon").addClass("d-none");
+        }
+    });
+});
+
+
+$(document).ready(function() {
+    var time = 0, timeOut = 0;  
+    var x = document.getElementById("passinput");
+    $(".eyeicon").on('mousedown touchstart', function(e) {
+        x.type = "text"; 
+        timeOut = setInterval(function(){
+            console.log(time++);
+        }, 100);
+    }).bind('mouseup mouseleave touchend', function() {
+        x.type = "password"; 
+        clearInterval(timeOut);
+    });
+});
 
 

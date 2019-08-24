@@ -73,7 +73,7 @@
               <li type="disc">No History Available</li>
             <% } %>
             <% for(var i=0; i<currentUser.history.length; i++) { %>
-              <li><%= currentUser.history[i].product +"    -    "+currentUser.history[i].quantity %></li>
+              <li><%= currentUser.history[i].product + "    -    " + currentUser.history[i].quantity + "    -    " + currentUser.history[i].date.toDateString() %></li>
             <% } %>
           </ol> 
 
