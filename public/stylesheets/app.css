@@ -16,7 +16,7 @@ body{
 /* styling navbar */
 
 #logo{
-    height: 55px;
+    height: 52px;
 }
 
 nav{
@@ -28,29 +28,29 @@ nav{
 
 .navbar-brand{
     color: #fff !important;
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     margin: none;
     padding: 0 !important;
 }
 
 .fa-bars{
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .n-link{
     display: inline-block;
     margin: none;
     color: #ece2e2;
-    padding: 10px 4px;
+    padding: 9px 1px;
     margin: auto 2px;
     transition: font-size, background-color 0.1s ease-in-out;
-    width: 8.4rem;
+    width: 8rem;
     text-align: center;
 }
 
 .n-link:hover, .active{
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #fff;
     text-decoration: none;
     background-color: rgb(69, 102, 133);
@@ -355,7 +355,7 @@ nav ul li .avatar:hover{
 #comments img{
     width: 60px;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 #comments .content{
@@ -502,26 +502,19 @@ footer{
     width: 100%;
 }
 
-footer p{
-    padding: 1rem 0 !important;
-    margin: 0 !important;
-    text-align: center;
-    color: white;
-}
-
 footer .social {
-    padding: 5px;
+    padding: 3px;
     text-align: center;
 }
   
 footer .social-icon {
     text-align: center;
-    width: 43px;
+    width: 40px;
     padding: 10px;
     border-radius: 50%;
     color: white;
     background-color: black;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 5px 7px;
 }
 
@@ -554,7 +547,7 @@ footer .social .fa-linkedin-in {
 }
 
 
-/* styling the rice products page */
+/* styling the products page */
 
 .product{
     padding-top: 6rem;
@@ -563,15 +556,15 @@ footer .social .fa-linkedin-in {
 }
 
 .product .product_title{
-    font-size: 2.7rem;
-    margin-bottom: 1.8rem;
+    font-size: 2.6rem;
+    margin-bottom: 1.6rem;
     color: #3c4f79;
     border-bottom: 1px solid rgba(0,0,0, 0.1);
     padding: 10px 0;
 }
 
 .product .card{
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.3rem !important;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
@@ -587,12 +580,12 @@ footer .social .fa-linkedin-in {
 }
 
 h2.card-title{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .card-text{
-    margin: 15px auto 15px 20px !important;
-    font-size: 1.3rem;
+    margin: 15px auto 15px 15px !important;
+    font-size: 1.2rem;
     font-weight: 400;
     border-bottom: 1px solid rgba(0,0,0, 0.1);
 }
@@ -634,7 +627,7 @@ h2.card-title{
 .mod-content {
 background-color: #e5ebeafd;
 width: 60vw;
-margin: 12vh 20vw;
+margin: 10vh 20vw;
 border: 1px solid #888;
 font-size: 1rem;
 font-weight: 500;
@@ -685,7 +678,7 @@ border: 1px solid #888;
     margin: auto;
     max-width: 90%;
     text-align: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid rgba(0,0,0, 0.1);
 }
 
@@ -699,7 +692,7 @@ border: 1px solid #888;
 }
 
 .mod .mod-content form{
-    padding: 15px 15px;
+    padding: 10px 15px;
     margin-left: 20px;
     width: 90%;
     border-bottom: 1px solid rgba(0,0,0, 0.1);
@@ -716,7 +709,7 @@ border: 1px solid #888;
     font-size: 1 rem !important;
     font-weight: 500;
     height: 2rem;
-    margin: 5px 10px;
+    margin: 0px 10px;
 }
 
 .mod .mod-content form input#typeOfDelivery, .mod .mod-content form input#currentPrice{
@@ -725,11 +718,11 @@ border: 1px solid #888;
 }
 
 .mod .mod-content .submit{
-    margin-top: 5px !important;
+    margin-top: 2px !important;
 }
 
 .mod .mod-content .customer-info{
-    padding: 15px;
+    padding: 10px 15px;
     line-height: 0.8;
     margin-left: 15px;
 }
@@ -737,14 +730,14 @@ border: 1px solid #888;
 .mod .mod-content .customer-info h4{
     font-weight: 500;
     color: steelblue;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
   
 /* The Close Button (x) */
 .mod .mod-content .cl, .mod .mod-content-logout .cl{
     float: right;
     color: #000;
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     font-weight: bold;
     margin-top: -0.6rem;
     margin-right: 0.9rem;
@@ -774,17 +767,17 @@ border: 1px solid #888;
 /* styling signin and signup form */
 
 .form{
-    max-width: 500px;
-    margin: 20vh auto 0 auto;
+    max-width: 490px;
+    margin: 20vh auto 5px auto;
 }
 
 .formS{
-    margin: 15vh auto 0 auto !important;
+    margin: 14vh auto 5px auto !important;
 }
 
 .form .border{
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 20px 5px;
+    padding: 10px 5px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.04);
 }

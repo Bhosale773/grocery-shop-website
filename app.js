@@ -160,6 +160,10 @@ app.post("/products/:product", function(req, res){
     res.redirect("/products/"+req.params.product);
 })
 
+app.get("/contact_us", function(req, res){
+    res.render("contact_us");
+});
+
 app.get("/login", function(req, res){
     res.render("login");
 });
