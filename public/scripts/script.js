@@ -88,11 +88,11 @@ else if(window.location.pathname == "/signup"){
     $("nav .n-list").find('li.active').removeClass("active");
     $("nav .n-list .signup").addClass("active");
 }
-else if(window.location.pathname == "/aboutus"){
+else if(window.location.pathname == "/about_us"){
     $("nav .n-list").find('li.active').removeClass("active");
     $("nav .n-list .aboutus").addClass("active");
 }
-else if(window.location.pathname == "/contactus"){
+else if(window.location.pathname == "/contact_us"){
     $("nav .n-list").find('li.active').removeClass("active");
     $("nav .n-list .contactus").addClass("active");
 }
