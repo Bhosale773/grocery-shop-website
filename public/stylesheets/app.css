@@ -870,7 +870,8 @@ border: 1px solid #888;
 
 #contact_us .formC{
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.03);
     width: 90%;
     margin: auto;
 }
@@ -921,6 +922,8 @@ border: 1px solid #888;
 #contact_us .text{
     background: url("../images/contact_us/contact_us.jpg") no-repeat center center/cover; 
     height: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 #contact_us .text i{
