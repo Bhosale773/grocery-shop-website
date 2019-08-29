@@ -13,6 +13,10 @@ var LocalStrategy         = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 var flash                 = require("connect-flash");
 var methodOverride        = require("method-override");
+var nodemailer            = require("nodemailer");
+var dotenv                = require("dotenv");
+
+dotenv.config();
     
 mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
 mongoose.set('useFindAndModify', false);
@@ -101,9 +105,6 @@ app.use(function(req, res, next){
     next();
 });
 
-
-
-
 app.get("/",function(req, res){
     Comment.find({},function(err,comments){
         if(err){
@@ -164,10 +165,70 @@ app.post("/products/:product", function(req, res){
                 });
             }
         });
-    })
-    req.flash("success", "Thank You for choosing Us. We will contact you shortly.");
-    res.redirect("/products/"+req.params.product);
-})
+    });
+
+    const output = `
+    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="contact_request" >
+        <div style="width: 95%; margin: 5px auto !important" class="msg">
+            <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">PRODUCT ENQUIRY</h2>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">One of our customer '${req.user.fname+" "+req.user.lname}' is Interested in '${req.body.title}'</p>
+            <h3 style="font-size: 1.2rem; color: rgb(26, 5, 49)">Enquiry Details :</h3>
+            <ul style="font-size: 1rem">  
+                <li>Product: ${req.body.title}</li>
+                <li>Quantity: ${req.body.quantity + " " + req.body.unit}</li>
+                <li>Delivery Preference: ${req.body.typeOfDelivery}</li>
+                <li>Want to know Current Price: ${req.body.currentPrice}</li>
+            </ul>
+            <h3 style="font-size: 1.2rem; color: rgb(26, 5, 49)">Customer Contact Details :</h3>
+            <ul style="font-size: 1rem">  
+                <li>Name: ${req.user.fname+" "+req.user.lname}</li>
+                <li>Email: ${req.user.email}</li>
+                <li>Contact No: ${req.user.contact}</li>
+                <li>Address Line-1: ${req.user.addressl1}</li>
+                <li>Address Line-2: ${req.user.addressl2}</li>
+            </ul>
+        </div>
+    </section>
+    `;
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        // host: 'mail.google.com',
+        // port: 587,
+        // secure: false, // true for 465, false for other ports
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASSWORD  // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"SADGURU RICE TRADERS" <process.env.EMAIL>', // sender address
+        to: 'pratikbhosale773@gmail.com', // list of receivers
+        subject: 'Product Enquiry', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            req.flash("error", "Something Went Wrong, Try Again.");
+            res.redirect("back");
+        }else{
+            console.log('Message sent: %s', info.messageId);   
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+            req.flash("success", "Thank You for choosing Us. We will contact you shortly.");
+            res.redirect("/products/"+req.params.product);
+        }
+    });  
+});
 
 app.get("/contact_us", function(req, res){
     res.render("contact_us");
@@ -178,12 +239,62 @@ app.post("/contact_us", function(req, res){
         if(err){
             req.flash("error", "Something Went Wrong, Try Again.");
             res.redirect("back");
-        }else{
-            console.log(customer);
-            req.flash("success", "Message Has Been Send Successfully.");
-            res.redirect("/contact_us");
         }
     });
+    const output = `
+    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="contact_request" >
+        <div style="width: 95%; margin: 5px auto !important" class="msg">
+            <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">CUSTOMER CONTACT REQUEST</h2>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">One of our customer want to interact with us...</p>
+            <h3 style="font-size: 1.2rem; color: rgb(26, 5, 49)">Contact Details :</h3>
+            <ul style="font-size: 1rem">  
+                <li>Name: ${req.body.name}</li>
+                <li>Email: ${req.body.email}</li>
+                <li>Contact No: ${req.body.contact}</li>
+            </ul>
+            <h3 style="font-size: 1.2rem; color: rgb(26, 5, 49)">Message :</h3>
+            <p style="font-size: 1rem">${req.body.message}</p>
+        </div>
+    </section>
+    `;
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        // host: 'mail.google.com',
+        // port: 587,
+        // secure: false, // true for 465, false for other ports
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASSWORD  // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"SADGURU RICE TRADERS" <process.env.EMAIL>', // sender address
+        to: 'pratikbhosale773@gmail.com', // list of receivers
+        subject: 'Customer Contact Request', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            req.flash("error", "Something Went Wrong, Try Again.");
+            res.redirect("back");
+        }else{
+            console.log('Message sent: %s', info.messageId);   
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+            req.flash("success", "Message has been send successfully.");
+            res.redirect("/contact_us");
+        }
+    });       
 });
 
 app.get("/login", function(req, res){
