@@ -23,7 +23,7 @@
 				<% if(currentUser){ %>
 				<form action="/contact_us" method="POST">
 					<label for="name">TELL US YOUR NAME*</label>
-					<input id="name" type="text" placeholder="First Name                     Last Name" name="fname" value="<%= currentUser.fname + ' ' + currentUser.lname %>" required>
+					<input id="name" type="text" placeholder="First Name                     Last Name" name="name" value="<%= currentUser.fname + ' ' + currentUser.lname %>" required>
 					<label for="email">ENTER YOUR EMAIL*</label>
 					<input id="email" type="email" placeholder="Eg: example@gmail.com" name="email" value="<%= currentUser.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email address" required>
 					<label for="contact">ENTER CONTACT NUMBER*</label>
@@ -35,7 +35,7 @@
 				<% }else{ %>
 				<form action="/contact_us" method="POST">
 					<label for="name">TELL US YOUR NAME*</label>
-					<input id="name" type="text" placeholder="First Name                     Last Name" name="fname" required>
+					<input id="name" type="text" placeholder="First Name                     Last Name" name="name" required>
 					<label for="email">ENTER YOUR EMAIL*</label>
 					<input id="email" type="email" placeholder="Eg: example@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email address" required>
 					<label for="contact">ENTER CONTACT NUMBER*</label>

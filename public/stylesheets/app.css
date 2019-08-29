@@ -72,16 +72,16 @@ nav ul li img{
 
 nav ul li .avatar{
     color: #fff;
-    font-size: 1.2rem;
-    margin: 6px 0px 0px 15px; 
+    font-size: 1.1rem;
+    margin: auto 2px !important; 
     cursor: pointer;
-    padding: 5px 10px;
-    margin: 0 !important;
+    padding: 3px 10px;
 }
 
 nav ul li .avatar:hover{
     background-color: rgb(69, 102, 133);
     border-radius: 7px;
+    font-size: 1.15rem;
 }
 
 
@@ -113,10 +113,11 @@ nav ul li .avatar:hover{
 /* styling alerts */
 
 .alert{
-    top: 100px;
+    top: 90px;
     width: 100%;
     z-index: 2;
     font-weight: 500;
+    margin-bottom: 50px;
 }
 
 /* responsive styling */
@@ -813,14 +814,14 @@ border: 1px solid #888;
     color: gray;
     font-size: 1.7rem;
     position: absolute;
-    padding: 10px 25px; 
+    padding: 8px 25px; 
     min-width: 40px; 
 }
 
 .eyeicon{
     margin-left: 385px !important;
     font-size: 1.3rem !important;
-    padding: 12px 25px !important; 
+    padding: 10px 20px !important; 
 }
 
 .eyeicon:active{

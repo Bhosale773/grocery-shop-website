@@ -41,6 +41,15 @@ var commentSchema = mongoose.Schema({
 
 var Comment = mongoose.model("Comment", commentSchema);
 
+var customerSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    contact: Number,
+    message: String
+});
+
+var Customer = mongoose.model("Customer", customerSchema);
+
 var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
@@ -162,6 +171,19 @@ app.post("/products/:product", function(req, res){
 
 app.get("/contact_us", function(req, res){
     res.render("contact_us");
+});
+
+app.post("/contact_us", function(req, res){
+    Customer.create(req.body, function(err, customer){
+        if(err){
+            req.flash("error", "Something Went Wrong, Try Again.");
+            res.redirect("back");
+        }else{
+            console.log(customer);
+            req.flash("success", "Message Has Been Send Successfully.");
+            res.redirect("/contact_us");
+        }
+    });
 });
 
 app.get("/login", function(req, res){
