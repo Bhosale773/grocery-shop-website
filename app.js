@@ -167,11 +167,59 @@ app.post("/products/:product", function(req, res){
         });
     });
 
-    const output = `
-    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="contact_request" >
+    const output1 = `
+    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="product" >
         <div style="width: 95%; margin: 5px auto !important" class="msg">
             <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">PRODUCT ENQUIRY</h2>
-            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">One of our customer '${req.user.fname+" "+req.user.lname}' is Interested in '${req.body.title}'</p>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Hello Mr/Mrs ${req.user.fname+" "+req.user.lname}, Your product enquiry about '${req.body.title}' is successfully submited.</p>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Thank you for choosing us, We will contact you soon.</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">Regards,</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">SADGURU RICE TRADERS</p>
+        </div>
+    </section>
+    `;
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter1 = nodemailer.createTransport({
+        // host: 'mail.google.com',
+        // port: 587,
+        // secure: false, // true for 465, false for other ports
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASSWORD  // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions1 = {
+        from: '"SADGURU RICE TRADERS" <process.env.EMAIL>', // sender address
+        to: req.user.email, // list of receivers
+        subject: 'Product Enquiry', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output1 // html body
+    };
+
+    // send mail with defined transport object
+    transporter1.sendMail(mailOptions1, (error, info) => {
+        if (error) {
+            console.log(error);
+            req.flash("error", "Something Went Wrong, Try Again.");
+            res.redirect("back");
+        }else{
+            console.log('Message sent: %s', info.messageId);   
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        }
+    });       
+
+    const output = `
+    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="product" >
+        <div style="width: 95%; margin: 5px auto !important" class="msg">
+            <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">PRODUCT ENQUIRY</h2>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">One of our customer Mr/Mrs ${req.user.fname+" "+req.user.lname} is Interested in '${req.body.title}'</p>
             <h3 style="font-size: 1.2rem; color: rgb(26, 5, 49)">Enquiry Details :</h3>
             <ul style="font-size: 1rem">  
                 <li>Product: ${req.body.title}</li>
@@ -241,6 +289,55 @@ app.post("/contact_us", function(req, res){
             res.redirect("back");
         }
     });
+
+    const output1 = `
+    <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="contact_request" >
+        <div style="width: 95%; margin: 5px auto !important" class="msg">
+            <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">CONTACT REQUEST</h2>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Hello Mr/Mrs ${req.body.name}, Your contact request is successfully submited.</p>
+            <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Thank you for choosing us, We will contact you soon.</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">Regards,</p>
+            <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">SADGURU RICE TRADERS</p>
+        </div>
+    </section>
+    `;
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter1 = nodemailer.createTransport({
+        // host: 'mail.google.com',
+        // port: 587,
+        // secure: false, // true for 465, false for other ports
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASSWORD  // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions1 = {
+        from: '"SADGURU RICE TRADERS" <process.env.EMAIL>', // sender address
+        to: req.body.email, // list of receivers
+        subject: 'Contact Request', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output1 // html body
+    };
+
+    // send mail with defined transport object
+    transporter1.sendMail(mailOptions1, (error, info) => {
+        if (error) {
+            console.log(error);
+            req.flash("error", "Something Went Wrong, Try Again.");
+            res.redirect("back");
+        }else{
+            console.log('Message sent: %s', info.messageId);   
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        }
+    });       
+
     const output = `
     <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="contact_request" >
         <div style="width: 95%; margin: 5px auto !important" class="msg">
@@ -294,7 +391,7 @@ app.post("/contact_us", function(req, res){
             req.flash("success", "Message has been send successfully.");
             res.redirect("/contact_us");
         }
-    });       
+    });   
 });
 
 app.get("/login", function(req, res){
@@ -326,6 +423,56 @@ app.post("/signup", function(req, res){
             res.redirect("/signup");
         }
         passport.authenticate("local")(req, res, function(){
+
+            const output1 = `
+            <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="product" >
+                <div style="width: 95%; margin: 5px auto !important" class="msg">
+                    <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">WELCOME</h2>
+                    <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Hello Mr/Mrs ${req.user.fname+" "+req.user.lname}, Welcome to Sadguru Rice Traders...</p>
+                    <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Thank you for choosing us, We are the best Rice wholesalers in Navi Mumbai. Along with Rice we also sale best quality products like Sugar, Jaggery, Pulses, etc.</p>
+                    <a href="#" style="font-size: 1.1rem; font-weight: 500">Click Here To Know More About Us</a>
+                    <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">Regards,</p>
+                    <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">SADGURU RICE TRADERS</p>
+                </div>
+            </section>
+            `;
+
+            // create reusable transporter object using the default SMTP transport
+            let transporter1 = nodemailer.createTransport({
+                // host: 'mail.google.com',
+                // port: 587,
+                // secure: false, // true for 465, false for other ports
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL, // generated ethereal user
+                    pass: process.env.PASSWORD  // generated ethereal password
+                },
+                tls:{
+                    rejectUnauthorized:false
+                }
+            });
+
+            // setup email data with unicode symbols
+            let mailOptions1 = {
+                from: '"SADGURU RICE TRADERS" <process.env.EMAIL>', // sender address
+                to: req.user.email, // list of receivers
+                subject: 'Welcome', // Subject line
+                text: 'Hello world?', // plain text body
+                html: output1 // html body
+            };
+
+            // send mail with defined transport object
+            transporter1.sendMail(mailOptions1, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    req.flash("error", "Something Went Wrong, Try Again.");
+                    res.redirect("back");
+                }else{
+                    console.log('Message sent: %s', info.messageId);   
+                    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+                }
+            });       
+
             req.flash("success", "You have registered successfully.");
             res.redirect("/");
         });

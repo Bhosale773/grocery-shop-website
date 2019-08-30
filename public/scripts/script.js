@@ -1,3 +1,9 @@
+$("nav .avatar").on("click",function(){
+    $("nav .navbar-toggler").addClass("collapsed");
+    $("nav .navbar-toggler").attr("aria-expanded","false");
+    $("nav .navbar-collapse").removeClass("show");
+});
+
 $('.carousel').carousel({
     pause: "false"
 });

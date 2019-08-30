@@ -24,6 +24,7 @@ nav{
     background-color: rgb(57, 84, 112);
     font-weight: 700;
     opacity: 0.9;
+    width: 100%;
 }
 
 .navbar-brand{
@@ -73,7 +74,7 @@ nav ul li img{
 nav ul li .avatar{
     color: #fff;
     font-size: 1.1rem;
-    margin: auto 2px !important; 
+    margin: auto 2px; 
     cursor: pointer;
     padding: 3px 10px;
 }
@@ -83,32 +84,6 @@ nav ul li .avatar:hover{
     border-radius: 7px;
     font-size: 1.15rem;
 }
-
-
-
-/* #logoutbtn{
-    background-color: rgba(31, 63, 88, 0.8);
-    position: fixed;
-    right: 22px;
-    top: 10px;  
-    width: 140px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #fff !important;
-    padding-top: 70px;
-    padding-bottom: 12px;
-    border-radius: 5px;
-    transition: all 0.1s ease-in-out;
-    text-align: center;
-    z-index: 2;
-    text-decoration: none;
-}
-
-#logoutbtn:hover{
-    font-size: 1.4rem;
-    color: rgb(27, 233, 223) !important;
-    background-color: rgba(43, 77, 105, 0.9);
-} */
 
 /* styling alerts */
 
@@ -123,19 +98,83 @@ nav ul li .avatar:hover{
 /* responsive styling */
 
 @media (max-width: 992px){
-    .n-link{
+    nav .avatar{
         width: 100%;
-        margin-top: 0.3rem;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
+        padding: 2px !important;
+        text-align: center;
     }
     .n-list{
         margin-top: 0.5rem;
         margin-right: 0;
     }
+    nav .n-link{
+        width: 100%;
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.3rem !important;
+        padding: 6px !important;
+        border-top: 1px solid gray;
+    }
+    
+    nav .avatar{
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+
     #know_more .p2, #know_more .p4, #know_more .p6{
         order: 1;
     }
     #know_more .i2, #know_more .i4, #know_more .i6{
         order: 2;
+    }
+}
+
+@media (max-width: 1024px){
+    .mod-content-logout{
+        margin: 15vh auto 0 auto !important;
+        width: 90%;
+    }
+    .mod-content-logout img{
+        width: 60px !important;
+    }
+    .mod-content-logout h3{
+        font-size: 1.2rem;
+        margin-left: 20px !important;
+
+    }
+    .mod-content-logout h4{
+        font-size: 1rem;
+        margin-left: 20px !important;
+    }
+    .mod-content-logout .name{
+        margin-top: 5px !important;
+    }
+    .mod-content-logout #historybtn{
+        margin: 15px 5% 5px 5% !important;
+        font-size: 1.1rem !important;
+        height: 40px;
+    }
+    .mod-content-logout #logoutbtn{
+        margin: 5px 5% !important;
+        font-size: 1.1rem !important;
+        height: 40px;
+    }
+    .mod-content-logout #history_list li{
+        margin: 5px 0px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 420px){
+    #logo{
+        width: 260px;
+    }
+}
+
+@media (max-width: 325px){
+    #logo{
+        width: 210px;
     }
 }
 
@@ -159,6 +198,10 @@ nav ul li .avatar:hover{
     right: 0;
     z-index: -1;
 }
+.carousel-control-next, .carousel-control-prev{
+    z-index: 0 !important;
+}
+
 
 /* styling slideshow content */
 
@@ -284,7 +327,7 @@ nav ul li .avatar:hover{
 }
 
 #know_more .head-info h2{
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     margin: auto;
     padding: 2rem 0;
     text-align: center;
@@ -636,10 +679,10 @@ font-weight: 500;
 
 
 .mod-content-logout {
-background-color: #e5ebeafd;
-max-width: 600px;
-margin: 15vh 32% 0 32%; /* 5% from the top, 15% from the bottom and centered */
-border: 1px solid #888;
+    background-color: #e5ebeafd;
+    max-width: 600px;
+    margin: 15vh 32% 0 32%; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
 }
 
 .mod-content-logout img{
@@ -649,6 +692,11 @@ border: 1px solid #888;
 
 .mod-content-logout .content{
     padding: 15px;
+    z-index: 1;
+}
+
+.mod-content-logout h3, .mod-content-logout h4{
+    margin-left: 40px;
 }
 
 .mod-content-logout .content .name{
