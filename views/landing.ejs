@@ -37,10 +37,10 @@
 
 <section id="know_more">
     <div class="head-info">
-        <h2>OUR PRODUCTS</h2>
+        <h2>PRODUCTS</h2>
     </div>
     <div class="row">
-        <div class="c col-lg-6">
+        <div class="i c col-lg-6">
             <div class="pic pic1"></div>
         </div>
         <div class="c col-lg-6">
@@ -67,12 +67,12 @@
                 <a class="btn btn-outline-success" href="/products/sugar">View All</a>
             </div>
         </div>
-        <div class="p2 c col-lg-6">
+        <div class="i p2 c col-lg-6">
             <div class="pic pic2"></div>
         </div>
     </div>
     <div class="row">
-        <div class="c col-lg-6">
+        <div class="i c col-lg-6">
             <div class="pic pic3"></div>
         </div>
         <div class="c col-lg-6">
@@ -97,12 +97,12 @@
                 <a class="btn btn-outline-success" href="/products/pulses">View All</a>
             </div>
         </div>
-        <div class="p4 c col-lg-6">
+        <div class="i p4 c col-lg-6">
             <div class="pic pic4"></div>
         </div>
     </div>
     <div class="row">
-        <div class="c col-lg-6">
+        <div class="i c col-lg-6">
             <div class="pic pic5"></div>
         </div>
         <div class="c col-lg-6">
@@ -128,7 +128,7 @@
                 <a class="btn btn-outline-success" href="/products/new">View All</a>
             </div>
         </div>
-        <div class="p6 c col-lg-6">
+        <div class="i p6 c col-lg-6">
             <div class="pic pic6"></div>
         </div>
     </div>
@@ -143,26 +143,28 @@
         <a class="add btn btn-lg btn-light" href="/comments/new">Add Review</a>
         <div class="row">
             <% comments.forEach(function(comment){ %>
-                <div class="col-4">
+                <div class="col-xl-4 col-lg-6 col-12">
                     <div class="content">
                         <div class="row">
                             <div class="col-2">
                                 <img src="../images/Avatar/male_avatar.png" alt="Icon">
                             </div>
                             <div class="col-7">
-                                <h5><%=comment.text%></h5>
-                                <% for(var i=0; i< comment.starValue; i++){ %>
-                                    <i class="fa fa-star check"></i>
-                                <% } %>
-                                <% for(var i=0; i< 5-comment.starValue; i++){ %>
-                                    <i class="fa fa-star"></i>
-                                <% } %>
-                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                                    <a class="update btn btn-sm btn-outline-success" href="/edit-comments/<%= comment._id %>">Update</a>
-                                    <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
-                                        <button class="delete btn btn-sm btn-outline-danger">Delete</button>
-                                    </form>
-                                <% } %>
+                                <h5 class="text"><%=comment.text%></h5>
+                                <div class="text">
+                                    <% for(var i=0; i< comment.starValue; i++){ %>
+                                        <i class="fa fa-star check"></i>
+                                    <% } %>
+                                    <% for(var i=0; i< 5-comment.starValue; i++){ %>
+                                        <i class="fa fa-star"></i>
+                                    <% } %>
+                                    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                        <a class="update btn btn-sm btn-outline-success" href="/edit-comments/<%= comment._id %>">Update</a>
+                                        <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                            <button class="delete btn btn-sm btn-outline-danger">Delete</button>
+                                        </form>
+                                    <% } %>
+                                </div>
                             </div>
                             <div class="col-3">
                                 <blockquote>

@@ -278,6 +278,10 @@ app.post("/products/:product", function(req, res){
     });  
 });
 
+app.get("/about_us", function(req, res){
+    res.render("about_us");
+});
+
 app.get("/contact_us", function(req, res){
     res.render("contact_us");
 });

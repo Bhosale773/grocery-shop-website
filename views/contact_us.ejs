@@ -3,7 +3,7 @@
 <section id="contact_us">
 	<h2 class="title">CONTACT US</h2>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-lg-6">
 			<div class="text">
 				<div class="textalign">
 					<i class="fa fa-map-marker-alt"><span class="heading"> Address </span></i>
@@ -17,7 +17,7 @@
 				</div>
 			</div>
 	    </div>
-	    <div class="col-md-6">
+	    <div class="col-lg-6">
 			<div class="formC">
 				<h4>Send Us a Message</h4>
 				<% if(currentUser){ %>
@@ -35,7 +35,7 @@
 				<% }else{ %>
 				<form action="/contact_us" method="POST">
 					<label for="name">TELL US YOUR NAME*</label>
-					<input id="name" type="text" placeholder="First Name                     Last Name" name="name" required>
+					<input id="name" type="text" placeholder="First Name                   Last Name" name="name" required>
 					<label for="email">ENTER YOUR EMAIL*</label>
 					<input id="email" type="email" placeholder="Eg: example@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email address" required>
 					<label for="contact">ENTER CONTACT NUMBER*</label>
