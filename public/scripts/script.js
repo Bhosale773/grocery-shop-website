@@ -1,12 +1,18 @@
+// make navbar collapsed when avatar icon is clicked
+
 $("nav .avatar").on("click",function(){
     $("nav .navbar-toggler").addClass("collapsed");
     $("nav .navbar-toggler").attr("aria-expanded","false");
     $("nav .navbar-collapse").removeClass("show");
 });
 
+// stop onhover stoping slideshow
+
 $('.carousel').carousel({
     pause: "false"
 });
+
+// animate smooth scrolling by know more button
 
 $("#carouselExampleFade #content a").on("click", function(event){
     if(this.hash !== ""){
@@ -19,6 +25,8 @@ $("#carouselExampleFade #content a").on("click", function(event){
         );
     }
 });
+
+// set time of timeline
 
 var today = new Date();
 var hrs = today.getHours();
@@ -53,7 +61,7 @@ else{
     $(".timeline").text("Will Open On Monday At 10:30 AM");
 }
 
-
+// animate smooth scrolling on clicking direct link on product info box
 
 $(document).ready(function(){
     var speed = 200;
@@ -76,6 +84,8 @@ function scrollToID(id, speed) {
     var targetOffset = obj.top - offSet;
     $('html,body').animate({ scrollTop: targetOffset }, speed);
 }
+
+// decide which nav link should be active
 
 if(window.location.pathname == "/"){
     $("nav .n-list").find('li.active').removeClass("active");
@@ -104,6 +114,7 @@ else if(window.location.pathname == "/contact_us"){
 }
 
 // Get the modal
+
 var modal = document.querySelectorAll('.mod');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -115,6 +126,8 @@ window.onclick = function(event) {
         }
     }
 }
+
+// animate star rating
 
 $("#star-rating i.one").on("mouseover",function(){
     $("#star-rating input").val(1);
@@ -189,6 +202,8 @@ if($("#star-rating input").val()==="1"){
     $("#star-rating i.five").addClass("check");
 }
 
+// animate eye icon
+
 $(document).ready(function() {
     $("#passinput").on("keyup", function(){
         if($("#passinput").val()){
@@ -199,6 +214,7 @@ $(document).ready(function() {
     });
 });
 
+// set eye icon function
 
 $(document).ready(function() {
     var time = 0, timeOut = 0;  

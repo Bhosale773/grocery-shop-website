@@ -95,354 +95,6 @@ nav ul li .avatar:hover{
     margin-bottom: 50px;
 }
 
-/* responsive styling */
-
-@media (max-width: 992px){
-    nav .avatar{
-        width: 100%;
-        margin-top: 0.2rem !important;
-        margin-bottom: 0.2rem !important;
-        padding: 2px !important;
-        text-align: center;
-    }
-    .n-list{
-        margin-top: 0.5rem;
-        margin-right: 0;
-    }
-    nav .n-link{
-        width: 100%;
-        margin-top: 0.3rem !important;
-        margin-bottom: 0.3rem !important;
-        padding: 6px !important;
-        border-top: 1px solid gray;
-    }
-    
-    nav .avatar, nav .register{
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
-    }
-
-    #know_more .p2, #know_more .p4, #know_more .p6{
-        order: 1;
-    }
-    #know_more .i2, #know_more .i4, #know_more .i6{
-        order: 2;
-    }
-    #contact_us .formC{
-        width: 100% !important;
-        margin: 20px auto !important;
-    }
-
-    #know_more .row .c{
-        height: 290px !important;
-    }
-
-    #know_more .row .i{
-        height: 220px !important;
-    }
-    #know_more .pic{
-        height: 95% !important;
-        width: 95% !important;
-    }
-    #know_more .info{
-        width: 95% !important;
-        height: 95% !important;
-        margin: auto !important;
-        padding: 15px 5px !important;
-    }
-    #know_more .info .product_list{
-        padding: 0 !important;
-    }
-    #know_more .info .product_list li{
-        margin: 5px;
-        padding: 5px 10px !important;
-        font-weight: 500;
-        text-align: left;
-    }
-    #know_more .info .product_list li a{
-        font-size: 1rem !important;
-    }
-    #about_us .border{
-        padding: 5px 15px !important;
-    }
-    #know_more .head-info h2{
-        font-size: 3.2rem !important;
-        padding: 1rem 0 !important;
-        margin-bottom: 1rem !important;
-    }
-    #comments .head-info h2{
-        font-size: 3.2rem !important;
-    }
-    
-    #about_us h2{
-        font-size: 2rem !important;
-        padding: 5px 0px !important;
-    }
-    #about_us p{
-        font-size: 1rem !important;
-    }
-    #about_us .card{
-        width: 100% !important;
-        margin: 20px auto !important;
-    }
-    
-    #about_us .card-body{
-        padding: 0px 5px !important;
-    }
-    
-    #about_us .card-title{
-        font-size: 1.8rem !important;
-        padding: 10px 0px !important;
-    }
-    
-    #about_us .card-subtitle{
-        font-size: 1.3rem !important;
-        padding: 5px !important;
-    }
-    
-    #about_us .card-content{
-        margin: 20px 5px !important;
-        padding: 0px 0px 5px 0px !important;
-    }
-    
-    #about_us .value{
-        display: block;
-        margin-left: 0% !important;
-    }
-    
-    #about_us .subtitle{
-        font-size: 1.4rem !important;
-    }
-    
-    #about_us .list{
-        font-size: 1rem !important;
-        padding-left: 30px !important;
-    }
-    .card-text .property{
-        width: 200px !important;
-    }
-    .mod-content {
-        width: 90% !important;
-        margin: 8vh auto 0 auto !important;
-    }
-    .mod .mod-content h2{      
-        font-size: 1.3rem !important;
-        padding: 10px 20px;
-        border-bottom: 1px solid rgba(0,0,0, 0.1);
-    }
-    
-    .mod .mod-content form{
-        padding: 10px !important;
-        margin: 5px !important;
-        width: 95% !important;
-    }
-    
-    .mod .mod-content form label{
-        font-size: 1.1rem !important;
-    }
-    
-    .mod .mod-content form input{
-        height: 1.8rem !important;
-        margin: 0px 5px !important;
-        width: 130px;
-    }
-    .mod .mod-content form select{
-        height: 1.8rem !important;
-        margin: 0px 5px !important;
-    }
-    
-    .mod .mod-content form input#typeOfDelivery, .mod .mod-content form input#currentPrice{
-        height: 0.8rem !important;
-    }
-
-    .mod .mod-content p{
-        margin-bottom: 5px !important;
-    }
-
-    .mod .mod-content .customer-info{
-        font-size: 0.9rem !important;
-        line-height: 1.2 !important;
-    }
-    
-    .mod .mod-content .customer-info h4{
-        font-size: 1.2rem !important;
-        margin-bottom: 5px !important;
-    }
-    .mod .mod-content .cl, .mod .mod-content-logout .cl{
-        font-size: 1.7rem !important;
-        margin-right: 0.4rem !important;
-    }
-}
-
-@media (max-width: 1024px){
-    .mod-content-logout{
-        margin: 15vh auto 0 auto !important;
-        width: 90%;
-    }
-    .mod-content-logout img{
-        width: 60px !important;
-    }
-    .mod-content-logout h3{
-        font-size: 1.2rem;
-        margin-left: 20px !important;
-
-    }
-    .mod-content-logout h4{
-        font-size: 1rem;
-        margin-left: 20px !important;
-    }
-    .mod-content-logout .name{
-        margin-top: 5px !important;
-    }
-    .mod-content-logout #historybtn{
-        margin: 15px 5% 5px 5% !important;
-        font-size: 1.1rem !important;
-        height: 40px;
-    }
-    .mod-content-logout #logoutbtn{
-        margin: 5px 5% !important;
-        font-size: 1.1rem !important;
-        height: 40px;
-    }
-    .mod-content-logout #history_list li{
-        margin: 5px 0px !important;
-        font-size: 0.8rem !important;
-    }
-}
-
-@media (max-width: 420px){
-    #logo{
-        width: 260px;
-    }
-    footer .social-icon {
-        margin: 5px 3px !important;
-    }
-    .form{
-        max-width: 340px !important;
-    }
-    .eyeicon{
-        margin-left: 255px !important;
-    }
-    #comments .comment-container{
-        padding: 0px 0px 10px 0px !important;
-    }
-    #comments .content{
-        width: 100% !important;
-        padding: 8px !important;
-        margin: 2px 0px 2px 15px !important;
-    }
-    #comments .text{
-       margin-left: 15px !important;
-    }
-    #comments .comment-container .update{
-        margin-left: 5px !important;
-    }
-    #comments .content blockquote{
-        font-size: 0.8rem !important;
-    }
-    #comments .comment-container .add{
-        margin: 0px 0px 10px 0px !important;
-    }
-    #feature .feature-info{
-        padding-top: 2rem !important;
-    }
-    .product{
-        padding-top: 4.5rem !important;
-    }
-    
-    .product .product_title{
-        font-size: 2rem !important;
-        margin-bottom: 1.2rem !important;
-    }
-    
-    .product .card .col-md-4{
-        height: 280px;
-    }
-    
-    .card-body{
-        margin-left: 0px !important;
-        padding: 5px 10px !important;
-    }
-    
-    .card-title{
-        font-size: 1.4rem !important;
-        text-align: center;
-    }
-    
-    .card-text{
-        margin: 5px !important;
-        font-size: 1rem !important;
-    }
-    
-    .card-text .property{
-        width: 150px !important;
-    }
-    .card-text .value{
-        display: inline !important;
-    }
-    
-    .product .card-body .btn{
-        margin-top: 10px !important;
-        font-size: 1rem !important;
-        margin-top: 10px !important;
-        margin-bottom: 10px !important;
-        width: 130px !important;
-        margin-left: 30% !important;
-    }
-    .mod .mod-content .col-sm-4{
-        display: none;
-    }
-}
-
-@media (max-width: 325px){
-    #logo{
-        width: 210px;
-    }
-    .form{
-        max-width: 300px !important;
-    }
-    .eyeicon{
-        margin-left: 220px !important;
-    }
-    #star-rating{
-        font-size: 2.2rem !important;
-    }
-    .mod-content-logout h3{
-        font-size: 1rem !important;
-        margin-left: 25px !important;
-    }
-    .mod-content-logout h4{
-        font-size: 0.8rem;
-        margin-left: 25px !important;
-    }
-    #feature .feature-info{
-        padding-top: 1rem !important;
-    }
-}
-
-@media (max-height: 450px){
-    .form{
-        margin: 110px auto 60px auto !important;
-    }
-    .formS{
-        margin: 110px auto 50px auto !important;
-    }
-    #contact_us{
-        padding-top: 40px;
-    }
-    #content h1{
-        margin-top: 5px !important;
-        margin-bottom: 1.2rem !important;
-    }
-    #content p{
-        margin-bottom: 20px !important;
-    }
-    #know_more .row .c{
-        width: 80% !important;
-        margin: 5px auto !important;
-    }
-}
-
 /* styling the slideshow */
 
 .img{
@@ -493,48 +145,6 @@ nav ul li .avatar:hover{
     margin-bottom: 40px;
     text-decoration: underline;
     color: rgb(237, 238, 230);
-}
-
-/* responsive styling */
-@media(width: 1024px){
-    .mod .mod-content{
-        width: 80% !important;
-        margin-left: 10% !important;
-    }
-}
-
-@media(max-width: 570px){
-    #content{
-        max-width: 300px;
-        padding-top: 40%;
-    }
-    #content h1{
-        font-size: 3.2rem;
-        font-weight: 500;
-    }
-    #content p{
-        font-size: 1rem;
-    }
-    .mod .mod-content .col-sm-4{
-        display: none;
-    }
-}
-
-@media(min-width: 566px) and (max-width: 830px){
-    #content{
-        max-width: 400px;
-        padding-top: 10%;
-    }
-    #content h1{
-        font-size: 3.2rem;
-        font-weight: 500;
-    }
-    #content p{
-        font-size: 1rem;
-    }
-    #feature .feature-info{
-        padding-top: 1rem !important;
-    }
 }
 
 /* styling product info section */
@@ -906,7 +516,6 @@ h2.card-title{
 
 /* styling popup window */
 
-
 /* The Modal (background) */
 .mod {
     display: none; /* Hidden by default */
@@ -922,17 +531,7 @@ h2.card-title{
     padding-top: 60px;
 }
 
-
-/* Modal Content/Box */
-.mod-content {
-background-color: #e5ebeafd;
-width: 60vw;
-margin: 10vh 20vw;
-border: 1px solid #888;
-font-size: 1rem;
-font-weight: 500;
-}
-
+/* mod-content for logout popup */
 
 .mod-content-logout {
     background-color: #e5ebeafd;
@@ -975,6 +574,17 @@ font-weight: 500;
     font-size: 1rem;
     font-weight: 500;
     color: rgb(94, 62, 14);
+}
+
+/* mod-content for product enquiry popup */
+
+.mod-content {
+    background-color: #e5ebeafd;
+    width: 60vw;
+    margin: 10vh 20vw;
+    border: 1px solid #888;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .mod .mod-content h2{
@@ -1053,7 +663,8 @@ font-weight: 500;
     cursor: pointer;
 }
 
-/* Add Zoom Animation */
+/* Add Zoom Animation for mod */
+
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
@@ -1069,12 +680,14 @@ font-weight: 500;
     to {transform: scale(1)}
 }
 
-/* styling signin and signup form */
+/* styling form */
 
 .form{
     max-width: 490px;
     margin: 150px auto 5px auto;
 }
+
+/* formS for signup form */
 
 .formS{
     margin: 110px auto 5px auto;
@@ -1341,7 +954,374 @@ font-weight: 500;
     color: rgb(77, 13, 42);
 }
 
+/* styling error page */
+
 #error{
     width: 100%;
     height: 100%;
 }
+
+/* ========================================== */
+/* responsive styling for mobile, tablet view */
+/* ========================================== */
+
+@media (max-width: 325px){
+    #logo{
+        width: 210px;
+    }
+    .form{
+        max-width: 300px !important;
+    }
+    .eyeicon{
+        margin-left: 220px !important;
+    }
+    #star-rating{
+        font-size: 2.2rem !important;
+    }
+    .mod-content-logout h3{
+        font-size: 1rem !important;
+        margin-left: 25px !important;
+    }
+    .mod-content-logout h4{
+        font-size: 0.8rem;
+        margin-left: 25px !important;
+    }
+    #feature .feature-info{
+        padding-top: 1rem !important;
+    }
+}
+
+@media (max-width: 420px){
+    #logo{
+        width: 260px;
+    }
+    footer .social-icon {
+        margin: 5px 3px !important;
+    }
+    .form{
+        max-width: 340px !important;
+    }
+    .eyeicon{
+        margin-left: 255px !important;
+    }
+    #comments .comment-container{
+        padding: 0px 0px 10px 0px !important;
+    }
+    #comments .content{
+        width: 100% !important;
+        padding: 8px !important;
+        margin: 2px 0px 2px 15px !important;
+    }
+    #comments .text{
+       margin-left: 15px !important;
+    }
+    #comments .comment-container .update{
+        margin-left: 5px !important;
+    }
+    #comments .content blockquote{
+        font-size: 0.8rem !important;
+    }
+    #comments .comment-container .add{
+        margin: 0px 0px 10px 0px !important;
+    }
+    #feature .feature-info{
+        padding-top: 2rem !important;
+    }
+    .product{
+        padding-top: 4.5rem !important;
+    } 
+    .product .product_title{
+        font-size: 2rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+    .product .card .col-md-4{
+        height: 280px;
+    }
+    .card-body{
+        margin-left: 0px !important;
+        padding: 5px 10px !important;
+    }  
+    .card-title{
+        font-size: 1.4rem !important;
+        text-align: center;
+    }  
+    .card-text{
+        margin: 5px !important;
+        font-size: 1rem !important;
+    }    
+    .card-text .property{
+        width: 150px !important;
+    }
+    .card-text .value{
+        display: inline !important;
+    }   
+    .product .card-body .btn{
+        margin-top: 10px !important;
+        font-size: 1rem !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        width: 130px !important;
+        margin-left: 30% !important;
+    }
+    .mod .mod-content .col-sm-4{
+        display: none;
+    }
+}
+
+@media (max-height: 450px){
+    .form{
+        margin: 110px auto 60px auto !important;
+    }
+    .formS{
+        margin: 110px auto 50px auto !important;
+    }
+    #contact_us{
+        padding-top: 40px;
+    }
+    #content h1{
+        margin-top: 5px !important;
+        margin-bottom: 1.2rem !important;
+    }
+    #content p{
+        margin-bottom: 20px !important;
+    }
+    #know_more .row .c{
+        width: 80% !important;
+        margin: 5px auto !important;
+    }
+}
+
+@media(max-width: 570px){
+    #content{
+        max-width: 300px;
+        padding-top: 40%;
+    }
+    #content h1{
+        font-size: 3.2rem;
+        font-weight: 500;
+    }
+    #content p{
+        font-size: 1rem;
+    }
+    .mod .mod-content .col-sm-4{
+        display: none;
+    }
+}
+
+@media(min-width: 566px) and (max-width: 830px){
+    #content{
+        max-width: 400px;
+        padding-top: 10%;
+    }
+    #content h1{
+        font-size: 3.2rem;
+        font-weight: 500;
+    }
+    #content p{
+        font-size: 1rem;
+    }
+    #feature .feature-info{
+        padding-top: 1rem !important;
+    }
+}
+
+@media (max-width: 992px){
+    nav .avatar{
+        width: 100%;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
+        padding: 2px !important;
+        text-align: center;
+    }
+    .n-list{
+        margin-top: 0.5rem;
+        margin-right: 0;
+    }
+    nav .n-link{
+        width: 100%;
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.3rem !important;
+        padding: 6px !important;
+        border-top: 1px solid gray;
+    }
+    nav .avatar, nav .register{
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+    #know_more .p2, #know_more .p4, #know_more .p6{
+        order: 1;
+    }
+    #know_more .i2, #know_more .i4, #know_more .i6{
+        order: 2;
+    }
+    #contact_us .formC{
+        width: 100% !important;
+        margin: 20px auto !important;
+    }
+    #know_more .row .c{
+        height: 290px !important;
+    }
+    #know_more .row .i{
+        height: 220px !important;
+    }
+    #know_more .pic{
+        height: 95% !important;
+        width: 95% !important;
+    }
+    #know_more .info{
+        width: 95% !important;
+        height: 95% !important;
+        margin: auto !important;
+        padding: 15px 5px !important;
+    }
+    #know_more .info .product_list{
+        padding: 0 !important;
+    }
+    #know_more .info .product_list li{
+        margin: 5px;
+        padding: 5px 10px !important;
+        font-weight: 500;
+        text-align: left;
+    }
+    #know_more .info .product_list li a{
+        font-size: 1rem !important;
+    }
+    #about_us .border{
+        padding: 5px 15px !important;
+    }
+    #know_more .head-info h2{
+        font-size: 3.2rem !important;
+        padding: 1rem 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    #comments .head-info h2{
+        font-size: 3.2rem !important;
+    }
+    #about_us h2{
+        font-size: 2rem !important;
+        padding: 5px 0px !important;
+    }
+    #about_us p{
+        font-size: 1rem !important;
+    }
+    #about_us .card{
+        width: 100% !important;
+        margin: 20px auto !important;
+    }
+    #about_us .card-body{
+        padding: 0px 5px !important;
+    }
+    #about_us .card-title{
+        font-size: 1.8rem !important;
+        padding: 10px 0px !important;
+    }
+    #about_us .card-subtitle{
+        font-size: 1.3rem !important;
+        padding: 5px !important;
+    }
+    #about_us .card-content{
+        margin: 20px 5px !important;
+        padding: 0px 0px 5px 0px !important;
+    }
+    #about_us .value{
+        display: block;
+        margin-left: 0% !important;
+    }
+    #about_us .subtitle{
+        font-size: 1.4rem !important;
+    }
+    #about_us .list{
+        font-size: 1rem !important;
+        padding-left: 30px !important;
+    }
+    .card-text .property{
+        width: 200px !important;
+    }
+    .mod-content {
+        width: 90% !important;
+        margin: 8vh auto 0 auto !important;
+    }
+    .mod .mod-content h2{      
+        font-size: 1.3rem !important;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(0,0,0, 0.1);
+    }
+    .mod .mod-content form{
+        padding: 10px !important;
+        margin: 5px !important;
+        width: 95% !important;
+    }
+    .mod .mod-content form label{
+        font-size: 1.1rem !important;
+    }
+    .mod .mod-content form input{
+        height: 1.8rem !important;
+        margin: 0px 5px !important;
+        width: 130px;
+    }
+    .mod .mod-content form select{
+        height: 1.8rem !important;
+        margin: 0px 5px !important;
+    }
+    .mod .mod-content form input#typeOfDelivery, .mod .mod-content form input#currentPrice{
+        height: 0.8rem !important;
+    }
+    .mod .mod-content p{
+        margin-bottom: 5px !important;
+    }
+    .mod .mod-content .customer-info{
+        font-size: 0.9rem !important;
+        line-height: 1.2 !important;
+    }
+    .mod .mod-content .customer-info h4{
+        font-size: 1.2rem !important;
+        margin-bottom: 5px !important;
+    }
+    .mod .mod-content .cl, .mod .mod-content-logout .cl{
+        font-size: 1.7rem !important;
+        margin-right: 0.4rem !important;
+    }
+}
+
+@media (max-width: 1024px){
+    .mod-content-logout{
+        margin: 15vh auto 0 auto !important;
+        width: 90%;
+    }
+    .mod-content-logout img{
+        width: 60px !important;
+    }
+    .mod-content-logout h3{
+        font-size: 1.2rem;
+        margin-left: 20px !important;
+    }
+    .mod-content-logout h4{
+        font-size: 1rem;
+        margin-left: 20px !important;
+    }
+    .mod-content-logout .name{
+        margin-top: 5px !important;
+    }
+    .mod-content-logout #historybtn{
+        margin: 15px 5% 5px 5% !important;
+        font-size: 1.1rem !important;
+        height: 40px;
+    }
+    .mod-content-logout #logoutbtn{
+        margin: 5px 5% !important;
+        font-size: 1.1rem !important;
+        height: 40px;
+    }
+    .mod-content-logout #history_list li{
+        margin: 5px 0px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media(width: 1024px){
+    .mod .mod-content{
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+}
+

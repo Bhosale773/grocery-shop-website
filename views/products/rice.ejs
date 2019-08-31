@@ -1,4 +1,5 @@
 <% include ../partials/header %>
+
 <section class="product">
     <div class="container">
         <h2 class="product_title">ORGANIC RICE</h2>
@@ -19,7 +20,6 @@
                             <p class="card-text"><span class="property">Packaging Type</span><span class="value"><%= product.pType %></span></p>       
                             <p class="card-text"><span class="property">Price Range</span><span class="value"><%= product.price %></span></p>   
                             <button onclick="document.getElementById('<%= product.idn %>').style.display='block'" class="btn btn-secondary">Interested ?</button>
-
                             <div id="<%= product.idn %>" class="mod">
                                 <div class="animate mod-content">
                                     <span onclick="document.getElementById('<%= product.idn %>').style.display='none'" class="cl">&times;</span>
@@ -65,8 +65,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -74,6 +72,5 @@
         <% }); %>  
     </div>
 </section>
-
 
 <% include ../partials/footer %>

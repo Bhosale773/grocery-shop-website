@@ -105,6 +105,8 @@ app.use(function(req, res, next){
     next();
 });
 
+// Routes
+
 app.get("/",function(req, res){
     Comment.find({},function(err,comments){
         if(err){
@@ -427,7 +429,6 @@ app.post("/signup", function(req, res){
             res.redirect("/signup");
         }
         passport.authenticate("local")(req, res, function(){
-
             const output1 = `
             <section style="max-width: 650px; border: 1px solid rgba(0,0,0,0.2); margin: 40px auto; background-color: rgba(0,0,0,0.04)" id="product" >
                 <div style="width: 95%; margin: 5px auto !important" class="msg">
@@ -476,7 +477,6 @@ app.post("/signup", function(req, res){
                     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
                 }
             });       
-
             req.flash("success", "You have registered successfully.");
             res.redirect("/");
         });
@@ -553,6 +553,11 @@ app.delete("/comments/:id", isCommentOwner, function(req, res){
     });
 });
 
+app.get("*",function(req, res){
+    res.render("error");
+});
+
+// Middlewares
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
@@ -583,12 +588,6 @@ function isCommentOwner(req, res, next) {
     }
 }
 
-
-
-app.get("*",function(req, res){
-    res.render("error");
-});
-
 app.listen(process.env.PORT || 1000, function(){
-    console.log("Server started");
+    console.log("Server started...");
 });
