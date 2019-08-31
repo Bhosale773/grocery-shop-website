@@ -436,7 +436,7 @@ app.post("/signup", function(req, res){
                     <h2 style="color: #fff; font-size: 2rem; font-weight: 500; width: 100%; text-align: center; margin-top: 15px !important; padding: 10px 0px !important; background-color: steelblue">WELCOME</h2>
                     <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Hello Mr/Mrs ${req.user.fname+" "+req.user.lname}, Welcome to Sadguru Rice Traders...</p>
                     <p style="font-size: 1.2rem; font-weight: 500; color: rgb(145, 93, 58)">Thank you for choosing us, We are the best Rice wholesalers in Navi Mumbai. Along with Rice we also sale best quality products like Sugar, Jaggery, Pulses, etc.</p>
-                    <a href="#" style="font-size: 1.1rem; font-weight: 500">Click Here To Know More About Us</a>
+                    <a href="https://sadguru-rice-traders.herokuapp.com/" style="font-size: 1.1rem; font-weight: 500">Click Here To Know More About Us</a>
                     <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">Regards,</p>
                     <p style="font-size: 1.2rem; font-weight: 700; color: rgb(145, 93, 58)">SADGURU RICE TRADERS</p>
                 </div>
