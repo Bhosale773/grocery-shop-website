@@ -18,7 +18,8 @@ var dotenv                = require("dotenv");
 
 dotenv.config();
     
-mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
+// mongoose.connect("mongodb://localhost:27017/grocerry_shop_db",{useNewUrlParser:true});
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser:true});
 mongoose.set('useFindAndModify', false);
 
 var historySchema = new mongoose.Schema({
