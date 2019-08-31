@@ -1197,6 +1197,9 @@ h2.card-title{
     #comments .head-info h2{
         font-size: 3.2rem !important;
     }
+    .formS{
+        margin: 110px auto 50px auto !important;
+    }
     #about_us h2{
         font-size: 2rem !important;
         padding: 5px 0px !important;
@@ -1224,7 +1227,7 @@ h2.card-title{
         padding: 0px 0px 5px 0px !important;
     }
     #about_us .value{
-        display: block;
+        display: block !important;
         margin-left: 0% !important;
     }
     #about_us .subtitle{
