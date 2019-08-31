@@ -82,7 +82,7 @@ if(window.location.pathname == "/"){
     $("nav .n-list .home").addClass("active");
     $(".alert").css({
         position: "absolute",
-        width: "65vw",
+        width: "70vw",
         opacity: "0.8"
     });
 }
