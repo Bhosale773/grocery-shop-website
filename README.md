@@ -4,10 +4,10 @@
 <ul>
   <li>Node JS</li>
   <li>Express Framework</li>
-  <li>MongoDB as database</li>
+  <li>MongoDB as database (MongoDB Atlas cloud storage)</li>
   <li>Passport Framework for authentication</li>
   <li>Nodemailer package for Email Alerts</li>
-  <li>HTML,CSS,Bootstrap,JavaScript,Jquery,fontawesome icons</li>
+  <li>HTML, CSS, Bootstrap, JavaScript, Jquery, font-awesome icons</li>
 </ul>
 <h5>Deployed On heroku</h5>
 <a href="http://sadguru-rice-traders.herokuapp.com">Link to Website</a>
